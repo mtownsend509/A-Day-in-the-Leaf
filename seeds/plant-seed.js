@@ -11,10 +11,21 @@ const plantSeeds = [
       sunshineNeeds: 'indirect light'
     },
     {
-      name: 'Zacartree'
+      name: 'Zacartree',
       species: 'Alaskan Cedar',
       height: 55,
       stage: 'sapling',
-      waterNeeds: 
+      waterNeeds: 'High Weekly',
+      watered: false,
+      sunshineNeeds: 'indirect light'
+    },
+    {
+      name: ''
+      species:
+      height:
+      stage:
+      waterNeeds:
+      watered:
+      sunshineNeeds:
     }
 ]

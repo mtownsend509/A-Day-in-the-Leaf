@@ -18,6 +18,12 @@ Plant.init(
         species: {
             type: DataTypes.STRING
         },
+        scientificName: {
+            type: DataTypes.STRING
+        },
+        adoptionDate: {
+            type: DataTypes.STRING
+        },
         height: {
             type: DataTypes.INTEGER
         },
@@ -35,5 +41,8 @@ Plant.init(
         sunshineNeeds: {
             type: DataTypes.STRING
         },
+        generalNotes: {
+            type: DataTypes.STRING
+        }
     }
 )
