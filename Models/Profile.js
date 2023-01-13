@@ -27,6 +27,7 @@ Profile.init(
             allowNull: false,
             validate: {
                 len: [8, 64],
+                // this validation only allows letter passwords and is case sensitive
                 is: /^[0-9a-f]{64}$/i,
             },
         },
