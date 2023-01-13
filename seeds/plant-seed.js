@@ -1,6 +1,6 @@
-const { Plant } = require('../Models/Plant');
+const { Plant } = require('../Models');
 
-const plantSeeds = [
+const plants = [
     {
       name: 'Christofern',
       species: 'Sword Fern',
@@ -53,4 +53,8 @@ const plantSeeds = [
         generalNotes: 'Do not eat the forbidden nature corndog',
         profile_ID: 2
       },
-]
+];
+
+const seedPlants = () => Plant.bulkCreate(plants)
+
+module.exports = seedPlants;

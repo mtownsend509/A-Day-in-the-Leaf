@@ -1,4 +1,4 @@
-const { Profile } = require('../Models/Profile');
+const { Profile } = require('../Models');
 
 const profileSeeds = [
     {
@@ -9,4 +9,8 @@ const profileSeeds = [
       userName: 'GoshOfWar',
       passord: 'HorseCatCow3#'
     }        
-]
+];
+
+const seedProfile = () => Profile.bulkCreate(profileSeeds);
+
+module.exports = seedProfile;
