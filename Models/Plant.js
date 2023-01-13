@@ -1,4 +1,4 @@
-namconst { Model, Datatypes } = require('sequelize');
+const { Model, Datatypes } = require('sequelize');
 const { DataTypes } = require('sequelize/types');
 
 const sequelize = require('../config/');
@@ -43,6 +43,15 @@ Plant.init(
         },
         generalNotes: {
             type: DataTypes.STRING
+        },
+        profile_ID: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'Profile',
+                key: 'id'
+            }
         }
     }
-)
+);
+
+module.exports = Plant;
