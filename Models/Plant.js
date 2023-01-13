@@ -1,4 +1,4 @@
-namconst { Model, Datatypes } = require('sequelize');
+const { Model, Datatypes } = require('sequelize');
 const { DataTypes } = require('sequelize/types');
 
 const sequelize = require('../config/');
@@ -18,6 +18,12 @@ Plant.init(
         species: {
             type: DataTypes.STRING
         },
+        scientificName: {
+            type: DataTypes.STRING
+        },
+        adoptionDate: {
+            type: DataTypes.STRING
+        },
         height: {
             type: DataTypes.INTEGER
         },
@@ -35,5 +41,17 @@ Plant.init(
         sunshineNeeds: {
             type: DataTypes.STRING
         },
+        generalNotes: {
+            type: DataTypes.STRING
+        },
+        profile_ID: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'Profile',
+                key: 'id'
+            }
+        }
     }
-)
+);
+
+module.exports = Plant;
