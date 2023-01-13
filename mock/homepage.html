@@ -8,7 +8,7 @@
             <script src="https://cdn.tailwindcss.com"></script>
       </head>
       <body>
-            <header class="text-center font-serif bg-[#5e6357] text-[#C4CEB4] p-5 m-5 rounded-lg drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]">
+            <header class="text-center font-serif bg-[#2c2e28] text-[#C4CEB4] p-5 m-5 rounded-lg drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]">
                   <h1 class="text-5xl font-bold mt-0 mb-6">
                         A Day in the Leaf
                   </h1>
@@ -17,22 +17,44 @@
                   </h2>
             </header>
 
+            <div class="p-20">
+              <br>
+            </div>
+
             <main class="grid grid-cols-6 gap-4">
-                  <div class="col-start-2 col-end-4 text-center font-serif bg-[#5e6357] text-[#C4CEB4] pt-8 m-5 rounded-lg drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]">
+                  <div class="col-start-2 col-end-4 text-center font-serif bg-[#5e6357] text-[#C4CEB4] p-8 m-5 rounded-lg drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]">
                         <h3 class="text-2xl font-bold mb-8">
                               Already have an account?
                         </h3>
-                        <h4 class="text-l font-bold mb-8">
-                              Log in here
-                        </h4>
+                        <div>
+                          <button
+                            id="login-button"
+                            class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-[#C4CEB4] to-[#bcbcbc] group-hover:from-[#C4CEB4] group-hover:to-[#bcbcbc] hover:text-[#2c2e28] text-[#C4CEB4] focus:ring-4 focus:outline-none focus:ring-green-200"
+                          >
+                            <span
+                              class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#2c2e28] rounded-md group-hover:bg-opacity-0"
+                            >
+                              Log in
+                            </span>
+                          </button>
+                        </div>
                   </div>
-                  <div class="col-start-4 col-end-6 text-center font-serif bg-[#5e6357] text-[#C4CEB4] pt-8 m-5 rounded-lg drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]">
+                  <div class="col-start-4 col-end-6 text-center font-serif bg-[#5e6357] text-[#C4CEB4] p-8 m-5 rounded-lg drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]">
                         <h3 class="text-2xl font-bold mb-8">
                               New user?
                         </h3>
-                        <h4 class="text-l font-bold mb-8">
-                              Create an account here
-                        </h4>
+                        <div>
+                          <button
+                            id="signup-button"
+                            class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-[#C4CEB4] to-[#bcbcbc] group-hover:from-[#C4CEB4] group-hover:to-[#bcbcbc] hover:text-[#2c2e28] text-[#C4CEB4] focus:ring-4 focus:outline-none focus:ring-green-200"
+                          >
+                            <span
+                              class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#2c2e28] rounded-md group-hover:bg-opacity-0"
+                            >
+                              Sign up
+                            </span>
+                          </button>
+                        </div>
                   </div>
             </main>
       </body>
@@ -40,7 +62,6 @@
       <footer class="text-center font-serif bg-[#5e6357] text-[#C4CEB4] p-5 m-5 rounded-lg drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]">
             <div class="grid grid-cols-4 gap-3">
               <div class="grid grid-cols-1">
-                <!-- mat footer column, github link -->
                 <h5 class="font-bold text-xl">Katrina Baker</h5>
                 <br />
                 <div class="flex justify-center">
@@ -48,7 +69,7 @@
                     onclick="window.open('https://github.com/katbakr')"
                     target="_blank"
                     type="button"
-                    class="text-[#C4CEB4] bg-[#2c2e28] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"
+                    class="text-[#C4CEB4] bg-[#2c2e28] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 mb-2"
                   >
                     <svg
                       class="mr-2 -ml-1 w-4 h-4"
@@ -69,8 +90,6 @@
                   </button>
                 </div>
               </div>
-      
-              <!-- abbey footer column, github link -->
               <div class="grid grid-cols-1">
                 <h5 class="font-bold text-xl">Zach Beiser</h5>
                 <br />
@@ -79,7 +98,7 @@
                     onclick="window.open('https://github.com/zbeiser')"
                     target="_blank"
                     type="button"
-                    class="text-[#C4CEB4] bg-[#2c2e28] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"
+                    class="text-[#C4CEB4] bg-[#2c2e28] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 mb-2"
                   >
                     <svg
                       class="mr-2 -ml-1 w-4 h-4"
@@ -100,8 +119,6 @@
                   </button>
                 </div>
               </div>
-      
-              <!-- parker footer column, github link -->
               <div class="grid grid-cols-1">
                 <h5 class="font-bold text-xl">Abigail Doyle</h5>
                 <br />
@@ -110,7 +127,7 @@
                     onclick="window.open('https://github.com/abbeydoyle')"
                     target="_blank"
                     type="button"
-                    class="text-[#C4CEB4] bg-[#2c2e28] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"
+                    class="text-[#C4CEB4] bg-[#2c2e28] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 mb-2"
                   >
                     <svg
                       class="mr-2 -ml-1 w-4 h-4"
@@ -131,8 +148,6 @@
                   </button>
                 </div>
               </div>
-      
-              <!-- eric footer column, github link -->
               <div class="grid grid-cols-1">
                 <h5 class="font-bold text-xl">Matthew Townsend</h5>
                 <br />
@@ -141,7 +156,7 @@
                     onclick="window.open('https://github.com/mtownsend509')"
                     target="_blank"
                     type="button"
-                    class="text-[#C4CEB4] bg-[#2c2e28] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2"
+                    class="text-[#C4CEB4] bg-[#2c2e28] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 mb-2"
                   >
                     <svg
                       class="mr-2 -ml-1 w-4 h-4"
