@@ -10,13 +10,16 @@ Plant.init(
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false,
         },
         name: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         species: {
-            type: DataTypes.STRING
+            // type: DataTypes.STRING
+            type: DataTypes.DATEONLY,
         },
         scientificName: {
             type: DataTypes.STRING
@@ -28,8 +31,12 @@ Plant.init(
             type: DataTypes.INTEGER
         },
         stage: {
-            type: DataTypes.STRING
+            // type: DataTypes.STRING
             //this will be like seed, sprout, or mature
+            // enum will only accept certain values, might make it easier if we track with pictures
+            // would need to specify these values to user in the prompt
+            type: DataTypes.ENUM,
+            values: ['seed', 'sprout', 'mature']
         },
         waterNeeds: {
             type: DataTypes.STRING
@@ -40,6 +47,18 @@ Plant.init(
         },
         sunshineNeeds: {
             type: DataTypes.STRING
+        },
+        humidityNeeds: {
+            type: DataTypes.STRING
+        },
+        soilType: {
+            type: DataTypes.STRING
+        },
+        fertilizerType: {
+            type: DataTypes.STRING
+        },
+        idealTemp: {
+            type: DataTypes.INTEGER
         },
         generalNotes: {
             type: DataTypes.STRING
