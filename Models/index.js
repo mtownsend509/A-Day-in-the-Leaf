@@ -11,3 +11,4 @@ Plant.belongsTo(Profile, {
 });
 
 module.exports = { Profile, Plant };
+

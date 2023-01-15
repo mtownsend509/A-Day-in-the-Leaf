@@ -1,10 +1,10 @@
 const logout = async () => {
-    const response = await fetch(/*API rout for logout goes here*/, {
+    const response = await fetch('/api/profile/logout', {
         method: 'POST',
         headers: {"Content-Type": 'application/json'}
     });
 
-    if response.ok {
+    if (response.ok) {
         //navigation to refresh page in logout state
     } else {
         window.alert('logout failed');
