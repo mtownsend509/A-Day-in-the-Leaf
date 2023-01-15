@@ -4,7 +4,7 @@ const logout = async () => {
         headers: {"Content-Type": 'application/json'}
     });
 
-    if response.ok {
+    if (response.ok) {
         //navigation to refresh page in logout state
     } else {
         window.alert('logout failed');
