@@ -18,7 +18,7 @@ const signUp = async(event) => {
         //on the backend, & add username check for unique
         const response = await fetch(/*route for signup*/, {
             method: 'POST',
-            body: JSON.stringify({email, password}),
+            body: JSON.stringify({userName, password}),
             headers: {'Content-Type': 'application/json'},
         });
         if(response.ok) {
