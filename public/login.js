@@ -1,4 +1,4 @@
-//still needs to be matched with html elements and api routes, and linked to HTML files
+//waiting for html to finish even listeners & functions
 
 const signUp = async(event) => {
     event.preventDefault();
@@ -14,9 +14,7 @@ const signUp = async(event) => {
     }
 
     if (userName && password) {
-        //we need to make the following result in a signed in status 
-        //on the backend, & add username check for unique
-        const response = await fetch(/*route for signup*/, {
+        const response = await fetch('/api/profile/', {
             method: 'POST',
             body: JSON.stringify({userName, password}),
             headers: {'Content-Type': 'application/json'},
@@ -36,9 +34,7 @@ const logIn = async (event) => {
     const password = document.querySelector(/*Not sure what the id is yet*/).value;
 
     if (userName && password) {
-        //we need to make the following result in a signed in status 
-        //on the backend, & add username password check
-        const response = await fetch(/*route for login*/, {
+        const response = await fetch('/api/profile/login', {
             method: 'POST',
             body: JSON.stringify({email, password}),
             headers: {'Content-Type': 'application/json'},
