@@ -1,5 +1,6 @@
 html {
       background-color: #C4CEB4;
+      /* background-color: #eae3ba; */
 }
 
 
@@ -21,6 +22,6 @@ html {
       --ocean-blue: #40a1a9;
       --muted-cerulean: #225f69;
       --forest: #284c20;
-      
+
 }
 
