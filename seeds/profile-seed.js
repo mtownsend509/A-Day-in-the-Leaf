@@ -7,7 +7,7 @@ const profileSeeds = [
     },
     {
       userName: 'GoshOfWar',
-      passord: 'HorseCatCow3#'
+      passord: 'HorseCow3#'
     }        
 ];
 
