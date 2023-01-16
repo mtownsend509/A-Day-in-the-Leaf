@@ -10,4 +10,5 @@ Plant.belongsTo(Profile, {
   foreignKey: 'profile_id'
 });
 
-module.exports = {Profile , Plant };
+module.exports = { Profile, Plant };
+
