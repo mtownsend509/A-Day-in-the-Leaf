@@ -1,18 +1,18 @@
 {
   "name": "a-day-in-the-leaf",
   "version": "1.0.0",
-  "description": "Saving plants byte by byte! An app to track your plant’s watering schedule, light exposure, growth, and health issues, with an option to create your own tracking category.",
-  "main": "server.js",
+  "description": "",
+  "main": "crontest.js",
   "scripts": {
-    "test": "jest",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mtownsend509/A-Day-in-the-Leaf.git"
   },
-  "author": "Katrina Baker, Zach Beiser, Abigail Doyle, Matthew Townsend",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/mtownsend509/A-Day-in-the-Leaf/issues"
   },
@@ -21,18 +21,11 @@
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.28.0",
-    "sqlite3": "^5.1.4"
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.2.4"
-  }
-}
-{
-  "dependencies": {
-    "cron": "^2.2.0"
+    "sequelize": "^6.28.0"
   }
 }
