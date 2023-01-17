@@ -1,3 +1,28 @@
 html {
       background-color: #C4CEB4;
+      font-family: serif;
+      /* background-color: #eae3ba; */
 }
+
+
+
+/* COLOR SCHEME: */
+
+:root {
+
+      --brown: #4d281e;
+      --clay: #8d4029;
+      --lavendar: #a487b2;
+      --dusty-pink: #cdadb2;
+      --sand-green: #c4c28e;
+      --sand: #eae3ba;
+      --yellow-green: #b9c26c;
+      --spring-green: #56a554;
+      --easter-green: #a9d48a;
+      --sea-foam: #8fd4c2;
+      --ocean-blue: #40a1a9;
+      --muted-cerulean: #225f69;
+      --forest: #284c20;
+
+}
+
