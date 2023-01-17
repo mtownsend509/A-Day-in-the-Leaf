@@ -11,6 +11,10 @@ const plants = [
       waterNeeds: 'Low biweekly',
       watered: false,
       sunshineNeeds: 'indirect light',
+      // humidityNeeds: 'yes',
+      // soilType: 'yes',
+      // fertilizerType: 'yes',
+      // idealTemp: 98,
       generalNotes: 'Plant keeps trying to die',
       profile_ID: 1
     },
@@ -24,6 +28,10 @@ const plants = [
       waterNeeds: 'High Weekly',
       watered: false,
       sunshineNeeds: 'indirect light',
+      // humidityNeeds: 'yes',
+      // soilType: 'yes',
+      // fertilizerType: 'yes',
+      // idealTemp: 98,
       generalNotes: 'neat plant bro',
       profile_ID: 1
     },
@@ -37,6 +45,10 @@ const plants = [
         waterNeeds: 'Mid Weekly',
         watered: false,
         sunshineNeeds: 'Full sun',
+        // humidityNeeds: 'yes',
+        // soilType: 'yes',
+        // fertilizerType: 'yes',
+        // idealTemp: 98,
         generalNotes: 'solid plant 9/10, would be 10 but nobody eats Kale',
         profile_ID: 2
       },
@@ -50,6 +62,10 @@ const plants = [
         waterNeeds: 'High Daily',
         watered: false,
         sunshineNeeds: 'Full sun',
+        // humidityNeeds: 'yes',
+        // soilType: 'yes',
+        // fertilizerType: 'yes',
+        // idealTemp: 98,
         generalNotes: 'Do not eat the forbidden nature corndog',
         profile_ID: 2
       },
