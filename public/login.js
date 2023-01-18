@@ -1,9 +1,9 @@
-//waiting for html to finish even listeners & functions
+//this javascript is associated with the login and signup html pages
 
 const signUp = async(event) => {
     event.preventDefault();
 
-    const userName = document.querySelector(/*Not sure what the id is yet*/).value;
+    const userName = document.querySelector("#floating_username").value;
     const password = document.querySelector(/*Not sure what the id is yet*/).value;
     const passwordMatch = document.querySelector(/*Not sure what the id is yet*/).value;
 
@@ -48,4 +48,4 @@ const logIn = async (event) => {
 };
 
 document.querySelector(/*sign up input element*/).addEventListener('submit', signUp);
-document.querySelector(/*log in input element*/).addEventListener('submit', signUp);
+document.querySelector(/*login ele*/).addEventListener('submit', logIn);
