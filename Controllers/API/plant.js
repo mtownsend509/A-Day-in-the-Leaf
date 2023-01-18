@@ -1,4 +1,5 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
 const { Plant } = require('../../models');
 const withAuth = require('../../utils/auth');
 

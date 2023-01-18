@@ -1,10 +1,11 @@
-const router = require('express').Router();
+ const express = require('express');
+ const router = express.Router();
 
-const profileRoutes = require('./profileRoutes');
-const plantRoutes = require('./plantRoutes');
+ const profileRoutes = require('./profile');
+ const plantRoutes = require('./plant');
 
-router.use('/profile', profileRoutes);
-router.use('/plant', plantRoutes);
+ router.use('/profile', profileRoutes);
+ router.use('/plant', plantRoutes);
 
-module.exports = router;
+ module.exports = router;
 
