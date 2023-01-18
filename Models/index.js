@@ -10,5 +10,4 @@ const Plant = require('./Plant');
 //   foreignKey: 'profile_id'
 // });
 
-module.exports = { Profile, Plant };
-
+module.exports = {Profile , Plant};

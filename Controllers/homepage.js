@@ -1,7 +1,8 @@
-const router = require("express").Router();
+const express = require('express');
+const router = express.Router();
 const { Plant, Profile } = require("../models");
 const withAuth = require("../utils/auth");
-profile
+
 router.get("/", async (req, res) => {
   try {
     // Get all plants and JOIN with profile data =================================================================
