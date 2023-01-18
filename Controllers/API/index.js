@@ -1,7 +1,8 @@
 const router = require('express').Router();
+const profileRoutes = require('./profileRoutes');
+const plantRoutes = require('./plantRoutes');
 
-const logRoutes = require('./log-routes');
+router.use('/profile', profileRoutes);
+router.use('/plant', plantRoutes);
 
-router.use('/log', logRoutes);
-
-module.exportes = router
+module.exports = router;
