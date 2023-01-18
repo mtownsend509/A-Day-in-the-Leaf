@@ -20,6 +20,7 @@
   "dependencies": {
     "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
+    "cron": "^2.2.0",
     "dotenv": "^16.0.3",
     "express-handlebars": "^6.0.6",
     "express-session": "^1.17.3",
@@ -29,10 +30,5 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.2.4"
-  }
-}
-{
-  "dependencies": {
-    "cron": "^2.2.0"
   }
 }
