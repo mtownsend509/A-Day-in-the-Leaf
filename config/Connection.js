@@ -26,11 +26,11 @@ if (process.env.JAWSDB_URL) {
   );
 }
 
-// const test = async () => {
-//   await sequelize. authenticate();
-//   console.log('Connection has been established successfully.');
-//   };
+const test = async () => {
+  await sequelize. authenticate();
+  console.log('Connection has been established successfully.');
+  };
 
-//   test();
+  test();
 
 module.exports = sequelize;
