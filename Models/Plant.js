@@ -1,7 +1,7 @@
-const { Model, Datatypes } = require('sequelize');
-const { DataTypes } = require('sequelize/types');
+const sequelize = require('../config/Connection');
 
-const sequelize = require('../config/');
+const { Model, DataTypes } = require('sequelize');
+// const { DataTypes } = require('sequelize/types');
 
 class Plant extends Model {}
 
@@ -18,8 +18,8 @@ Plant.init(
             allowNull: false,
         },
         species: {
-            // type: DataTypes.STRING
-            type: DataTypes.DATEONLY,
+            type: DataTypes.STRING
+            // type: DataTypes.DATEONLY,
         },
         scientificName: {
             type: DataTypes.STRING
@@ -31,12 +31,12 @@ Plant.init(
             type: DataTypes.INTEGER
         },
         stage: {
-            // type: DataTypes.STRING
+            type: DataTypes.STRING
             //this will be like seed, sprout, or mature
             // enum will only accept certain values, might make it easier if we track with pictures
             // would need to specify these values to user in the prompt
-            type: DataTypes.ENUM,
-            values: ['seed', 'sprout', 'mature']
+            // type: DataTypes.ENUM,
+            // values: ['seed', 'sprout', 'mature']
         },
         waterNeeds: {
             type: DataTypes.STRING
@@ -48,18 +48,18 @@ Plant.init(
         sunshineNeeds: {
             type: DataTypes.STRING
         },
-        humidityNeeds: {
-            type: DataTypes.STRING
-        },
-        soilType: {
-            type: DataTypes.STRING
-        },
-        fertilizerType: {
-            type: DataTypes.STRING
-        },
-        idealTemp: {
-            type: DataTypes.INTEGER
-        },
+        // humidityNeeds: {
+        //     type: DataTypes.STRING
+        // },
+        // soilType: {
+        //     type: DataTypes.STRING
+        // },
+        // fertilizerType: {
+        //     type: DataTypes.STRING
+        // },
+        // idealTemp: {
+        //     type: DataTypes.INTEGER
+        // },
         generalNotes: {
             type: DataTypes.STRING
         },
@@ -70,6 +70,13 @@ Plant.init(
                 key: 'id'
             }
         }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'Plant',
     }
 );
 

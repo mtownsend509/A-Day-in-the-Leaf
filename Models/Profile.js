@@ -1,8 +1,8 @@
-const { Model, Datatypes } = require('sequelize');
-const { DataTypes } = require('sequelize/types');
+const { Model, DataTypes } = require('sequelize');
+// const { DataTypes } = require('sequelize/types');
 const bcrypt = require('bcrypt');
 
-const sequelize = require('../config/');
+const sequelize = require('../config/Connection.js');
 
 class Profile extends Model {
     checkPassword(loginPw) {
@@ -14,23 +14,23 @@ Profile.init(
     {
         id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            // allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
         userName: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
             unique: true,
         },
         password: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [8, 64],
-                // this validation only allows letter passwords and is case sensitive
-                is: /^[0-9a-f]{64}$/i,
-            },
+            // allowNull: false,
+            // validate: {
+            //     len: [8, 64],
+            //     // this validation only allows letter passwords and is case sensitive
+            //     is: /^[0-9a-f]{64}$/i,
+            // },
         },
     },
 
