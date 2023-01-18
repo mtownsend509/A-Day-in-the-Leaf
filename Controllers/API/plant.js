@@ -19,6 +19,40 @@ router.post('/', withAuth, async (req, res) => {
 
   });
 
+// Update plant using ID
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const updatedPlant = await Plant.update(
+      {
+        name: req.body.name,
+        species: req.body.species,
+        scientificName: req.body.scientificName,
+        adoptionDate: req.body.adoptionDate,
+        height: req.body.height,
+        stage: req.body.stage,
+        waterNeeds: req.body.waterNeeds,
+        watered: req.body.watered,
+        sunshineNeeds: req.body.sunshineNeeds,
+        generalNotes: req.body.generalNotes
+      },
+      {
+        where:
+        {
+          id: req.params.id
+        }
+      }
+    )
+    if (!updatedPlant) {
+      res.status(404).json({ message: 'There is no plant with this id!'});
+      return;
+    }
+    res.status(200).json(updatedPlant);
+  } catch (err) {
+    res.status(500).json(err)
+  }
+  
+});
+
 //delete plant using ID, verifies that logged in before executing =================================================
   router.delete('/:id', withAuth, async (req, res) => {
     try {
