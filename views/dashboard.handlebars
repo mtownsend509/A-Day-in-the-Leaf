@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[url('./leaves.png')]">
+      <head>
+            <title>A Day in the Leaf</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link href="./style.css" rel="stylesheet">
+            <script src="https://cdn.tailwindcss.com"></script>
+            <script src="https://kit.fontawesome.com/34cb2d0b64.js" crossorigin="anonymous"></script>
+      </head>
+      <body>
+            <nav class="bg-[#2c2e28] py-5 sm:px-4 sticky top-[0px]">
+                  <div class="container flex flex-wrap items-center justify-between mx-auto">
+                        <a href="" class="flex items-center">
+                              <img src="./placeholder.png" class="h-6 mr-3 sm:h-9" alt="Logo" />
+                              <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-[#C4CEB4]">A Day in the Leaf</span>
+                        </a>
+                        <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-[#2c2e28] focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
+                              <span class="sr-only">Open main menu</span>
+                              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                        </button>
+                        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                              <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-[#2c2e28] md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-[#2c2e28]">
+                                    <li>
+                                          <a href="#" class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:text-[#C4CEB4] md:p-0" aria-current="page">Home</a>
+                                    </li>
+                                    <li>
+                                          <a href="#" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Log out</a>
+                                    </li>
+                                    <li>
+                                          <a href="#" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Contact</a>
+                                    </li>
+                              </ul>
+                        </div>
+                  </div>
+            </nav>
+
+            <div class="grid grid-cols-10 mt-5 font-serif">
+                  <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-[#2c2e28] rounded-lg group bg-gradient-to-br from-[#2c2e28] to-[#284c20] group-hover:from-[#2c2e28] group-hover:to-[#284c20] hover:text-[#C4CEB4] focus:ring-4 focus:outline-none focus:ring-[#284c20] col-start-9 col-end-10">
+                        <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#C4CEB4] rounded-md group-hover:bg-opacity-0">
+                              <i class="fa-solid fa-plus"></i> Add plant
+                        </span>
+                  </button>
+            </div>
+          
+            <div class="flex flex-row bg-inherit antialiased">
+                  <div class="flex flex-col fixed top-[400px]">
+                        <a href="https://plants.usda.gov/home" class="text-3xl" target="_blank"><i class="fa-solid fa-seedling" title="USDA Plant Database"></i></a> 
+                        <a href="https://garden.org/plants/" class="text-3xl mb-2" target="_blank"><i class="fa-solid fa-leaf" title="Garden Plant Database"></i></a>
+                        <a href="https://www.rhs.org.uk/plants" class="text-3xl mb-2" target="_blank"><i class="fa-solid fa-plant-wilt" title="RHS Plant Identifier"></i></a> 
+                  </div>
+                  <div class="bg-inherit md:max-2xl:col-span-6 pl-20 ml-5">
+                        <div class="antialiased bg-inherit text-gray-900 font-sans p-6">
+                              <div class="container mx-auto">
+                                    <div class="flex flex-wrap -mx-4 cardcontainer">
+                                          <!-- start cards -->
+                                          <!-- single card start -->
+                                            {{!-- not sure if this is correct --}}
+                                         {{#each plant as |plant|}}
+                                          <div class="wrapper bg-[#C4CEB4] antialiased text-gray-900 w-full sm:w-1/2 md:w-1/2 xl:w-1/4 m-10">
+                                                <div>
+                                                      <img src="./placeholder.png" alt="plant image" class="w-full object-cover object-center rounded-lg shadow-md">
+                                                      <div class="relative px-4 -mt-16">
+                                                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                                                  <div class="flex justify-between">
+                                                                        <div class="flex items-baseline">
+                                                                              <span class="bg-[#284c20] text-[#eae3ba] text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
+                                                                                    {{!-- species instead of type? --}}
+                                                                                    {{plant.species}}
+                                                                              </span>
+                                                                        </div>
+                                                                        <div>
+                                                                              <button><i class="fa-solid fa-droplet"></i></button>
+                                                                              <button class="pl-5"><i class="fa-solid fa-trash"></i></button>
+                                                                        </div>
+                                                                  </div>
+                                                                  <h4 class="mt-1 text-xl font-semibold uppercase leading-tight truncate">
+                                                                        {{plant.name}}
+                                                                  </h4>
+                                                                  <div class="mt-1">
+                                                                         Watered: 
+                                                                        <span class="text-gray-600 text-sm">
+                                                                             {{plant.watered}}
+                                                                        </span>
+                                                                  </div>
+                                                                  <div class="mt-1">
+                                                                        Health conerns:
+                                                                        <span class="text-gray-600 text-sm">
+                                                                              {{plant.generalNotes}}
+                                                                        </span>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <!-- single card end -->
+                                         {{/each}}
+
+                                          <!-- <div class="wrapper bg-[#C4CEB4] antialiased text-gray-900 w-full sm:w-1/2 md:w-1/2 xl:w-1/4 m-10">
+                                                <div>
+                                                      <img src="./placeholder.png" alt="plant image" class="w-full object-cover object-center rounded-lg shadow-md">
+                                                      <div class="relative px-4 -mt-16">
+                                                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                                                  <div class="flex justify-between">
+                                                                        <div class="flex items-baseline">
+                                                                              <span class="bg-[#8d4029] text-[#eae3ba] text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
+                                                                                    Cactus
+                                                                              </span>
+                                                                        </div>
+                                                                        <div>
+                                                                              <button><i class="fa-solid fa-droplet"></i></button>
+                                                                              <button class="pl-5"><i class="fa-solid fa-trash"></i></button>
+                                                                        </div>
+                                                                  </div>
+                                                                  <h4 class="mt-1 text-xl font-semibold uppercase leading-tight truncate">
+                                                                        Plant Name
+                                                                  </h4>
+                                                                  <div class="mt-1">
+                                                                        Watered:
+                                                                        <span class="text-gray-600 text-sm">
+                                                                              Yes
+                                                                        </span>
+                                                                  </div>
+                                                                  <div class="mt-1">
+                                                                        Health conerns:
+                                                                        <span class="text-gray-600 text-sm">
+                                                                              Wilting
+                                                                        </span>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+
+
+                                          <div class="wrapper bg-[#C4CEB4] antialiased text-gray-900 w-full sm:w-1/2 md:w-1/2 xl:w-1/4 m-10">
+                                                <div>
+                                                      <img src="./placeholder.png" alt="plant image" class="w-full object-cover object-center rounded-lg shadow-md">
+                                                      <div class="relative px-4 -mt-16">
+                                                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                                                  <div class="flex justify-between">
+                                                                        <div class="flex items-baseline">
+                                                                              <span class="bg-[#a487b2] text-[#eae3ba] text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
+                                                                                    Flowering
+                                                                              </span>
+                                                                        </div>
+                                                                        <div>
+                                                                              <button><i class="fa-solid fa-droplet"></i></button>
+                                                                              <button class="pl-5"><i class="fa-solid fa-trash"></i></button>
+                                                                        </div>
+                                                                  </div>
+                                                                  <h4 class="mt-1 text-xl font-semibold uppercase leading-tight truncate">
+                                                                        Plant Name
+                                                                  </h4>
+                                                                  <div class="mt-1">
+                                                                        Watered:
+                                                                        <span class="text-gray-600 text-sm">
+                                                                              Yes
+                                                                        </span>
+                                                                  </div>
+                                                                  <div class="mt-1">
+                                                                        Health conerns:
+                                                                        <span class="text-gray-600 text-sm">
+                                                                              Wilting
+                                                                        </span>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+
+
+                                          <div class="wrapper bg-[#C4CEB4] antialiased text-gray-900 w-full sm:w-1/2 md:w-1/2 xl:w-1/4 m-10">
+                                                <div>
+                                                      <img src="./placeholder.png" alt="plant image" class="w-full object-cover object-center rounded-lg shadow-md">
+                                                      <div class="relative px-4 -mt-16">
+                                                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                                                  <div class="flex justify-between">
+                                                                        <div class="flex items-baseline">
+                                                                              <span class="bg-[#56a554] text-[#eae3ba] text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
+                                                                                    Herb
+                                                                              </span>
+                                                                        </div>
+                                                                        <div>
+                                                                              <button><i class="fa-solid fa-droplet"></i></button>
+                                                                              <button class="pl-5"><i class="fa-solid fa-trash"></i></button>
+                                                                        </div>
+                                                                  </div>
+                                                                  <h4 class="mt-1 text-xl font-semibold uppercase leading-tight truncate">
+                                                                        Plant Name
+                                                                  </h4>
+                                                                  <div class="mt-1">
+                                                                        Watered:
+                                                                        <span class="text-gray-600 text-sm">
+                                                                              Yes
+                                                                        </span>
+                                                                  </div>
+                                                                  <div class="mt-1">
+                                                                        Health conerns:
+                                                                        <span class="text-gray-600 text-sm">
+                                                                              Wilting
+                                                                        </span>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+
+                                          <div class="wrapper bg-[#C4CEB4] antialiased text-gray-900 w-full sm:w-1/2 md:w-1/2 xl:w-1/4 m-10">
+                                                <div>
+                                                      <img src="./placeholder.png" alt="plant image" class="w-full object-cover object-center rounded-lg shadow-md">
+                                                      <div class="relative px-4 -mt-16">
+                                                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                                                  <div class="flex justify-between">
+                                                                        <div class="flex items-baseline">
+                                                                              <span class="bg-[#cdadb2] text-[#eae3ba] text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
+                                                                                    Succulent
+                                                                              </span>
+                                                                        </div>
+                                                                        <div>
+                                                                              <button><i class="fa-solid fa-droplet"></i></button>
+                                                                              <button class="pl-5"><i class="fa-solid fa-trash"></i></button>
+                                                                        </div>
+                                                                  </div>
+                                                                  <h4 class="mt-1 text-xl font-semibold uppercase leading-tight truncate">
+                                                                        Plant Name
+                                                                  </h4>
+                                                                  <div class="mt-1">
+                                                                        Watered:
+                                                                        <span class="text-gray-600 text-sm">
+                                                                              Yes
+                                                                        </span>
+                                                                  </div>
+                                                                  <div class="mt-1">
+                                                                        Health conerns:
+                                                                        <span class="text-gray-600 text-sm">
+                                                                              Wilting
+                                                                        </span>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+
+                                          <div class="wrapper bg-[#C4CEB4] antialiased text-gray-900 w-full sm:w-1/2 md:w-1/2 xl:w-1/4 m-10">
+                                                <div>
+                                                      <img src="./placeholder.png" alt="plant image" class="w-full object-cover object-center rounded-lg shadow-md">
+                                                      <div class="relative px-4 -mt-16">
+                                                            <div class="bg-white p-6 rounded-lg shadow-lg">
+                                                                  <div class="flex justify-between">
+                                                                        <div class="flex items-baseline">
+                                                                              <span class="bg-[#40a1a9] text-[#eae3ba] text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
+                                                                                    Climber
+                                                                              </span>
+                                                                        </div>
+                                                                        <div>
+                                                                              <button><i class="fa-solid fa-droplet"></i></button>
+                                                                              <button class="pl-5"><i class="fa-solid fa-trash"></i></button>
+                                                                        </div>
+                                                                  </div>
+                                                                  <h4 class="mt-1 text-xl font-semibold uppercase leading-tight truncate">
+                                                                        Plant Name
+                                                                  </h4>
+                                                                  <div class="mt-1">
+                                                                        Watered:
+                                                                        <span class="text-gray-600 text-sm">
+                                                                              Yes
+                                                                        </span>
+                                                                  </div>
+                                                                  <div class="mt-1">
+                                                                        Health conerns:
+                                                                        <span class="text-gray-600 text-sm">
+                                                                              Wilting
+                                                                        </span>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    <!-- end cards -->
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+
+      </body>
+</html>
