@@ -2,12 +2,12 @@ const Profile = require('./Profile');
 const Plant = require('./Plant');
 
 Profile.hasMany(Plant, {
-  foreignKey: 'profileId',
+  foreignKey: 'profile_id',
   onDelete: 'CASCADE'
 });
 
 Plant.belongsTo(Profile, {
-  foreignKey: 'profileId'
+  foreignKey: 'profile_id'
 });
 
 module.exports = { Profile , Plant };
