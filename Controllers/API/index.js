@@ -1,6 +1,7 @@
-const router = require('express').Router();
+const express = require('express')
+const router = express.Router()
 
-const profileRoutes = require('./profileRoutes');
+const profileRoutes = require('./profile');
 const plantRoutes = require('./plantRoutes');
 
 router.use('/profile', profileRoutes);

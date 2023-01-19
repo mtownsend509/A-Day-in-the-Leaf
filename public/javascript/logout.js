@@ -6,6 +6,7 @@ const logout = async () => {
 
     if (response.ok) {
         //navigation to refresh page in logout state
+        document.location.replace('/');
     } else {
         window.alert('logout failed');
     }
