@@ -63,7 +63,7 @@ Plant.init(
         generalNotes: {
             type: DataTypes.STRING
         },
-        profile_ID: {
+        profileId: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'Profile',

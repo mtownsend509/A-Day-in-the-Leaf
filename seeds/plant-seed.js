@@ -16,7 +16,7 @@ const plants = [
       // fertilizerType: 'yes',
       // idealTemp: 98,
       generalNotes: 'Plant keeps trying to die',
-      profile_ID: 1
+      profileId: 1
     },
     {
       name: 'Zacartree',
@@ -33,7 +33,7 @@ const plants = [
       // fertilizerType: 'yes',
       // idealTemp: 98,
       generalNotes: 'neat plant bro',
-      profile_ID: 1
+      profileId: 1
     },
     {
         name: 'Abikale',
@@ -50,7 +50,7 @@ const plants = [
         // fertilizerType: 'yes',
         // idealTemp: 98,
         generalNotes: 'solid plant 9/10, would be 10 but nobody eats Kale',
-        profile_ID: 2
+        profileId: 2
       },
       {
         name: 'Kattail',
@@ -67,7 +67,7 @@ const plants = [
         // fertilizerType: 'yes',
         // idealTemp: 98,
         generalNotes: 'Do not eat the forbidden nature corndog',
-        profile_ID: 2
+        profileId: 2
       },
 ];
 
