@@ -5,22 +5,7 @@ const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    // Get all plants and JOIN with profile data =================================================================
-    const plantData = await Plant.findAll({
-      include: [
-        {
-          model: Profile,
-          //QUESTION: what attributes do we want to include?=====================================================?
-          attributes: [""],
-        },
-      ],
-    });
-
-    // plain: true to return only plain object ===================================================================
-    const plants = plantData.map((plant) => plant.get({ plain: true }));
-
     res.render("Homepage", {
-      plants,
       logged_in: req.session.logged_in,
     });
 //catch server error  ============================================================================================  
