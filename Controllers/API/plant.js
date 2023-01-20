@@ -11,7 +11,7 @@ router.post('/', withAuth, async (req, res) => {
         ...req.body,
         profile_id: req.session.profile_id,
       });
-  
+
       res.status(200).json(newPlant);
     } catch (err) {
       res.status(400).json(err);
@@ -50,7 +50,7 @@ router.put('/:id', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err)
   }
-  
+
 });
 
 //delete plant using ID, verifies that logged in before executing =================================================
@@ -68,7 +68,7 @@ router.put('/:id', withAuth, async (req, res) => {
         res.status(404).json({ message: 'There is no plant with this id!' });
         return;
       }
-  
+
  //200 error for successful request ==============================================================================
       res.status(200).json(plantData);
  //catch server error ============================================================================================     
@@ -77,5 +77,8 @@ router.put('/:id', withAuth, async (req, res) => {
     }
 
   });  
+  router.get('/', async (req, res) => {
+    res.json({message : 'plants are here'});
+  })
 
   module.exports = router;

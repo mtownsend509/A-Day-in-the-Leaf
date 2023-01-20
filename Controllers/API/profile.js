@@ -2,15 +2,24 @@ const express = require('express');
 const router = express.Router();
 const { Profile } = require("../../models");
 
+//for insomnia testing
+router.get('/', async (req, res) => {
+  try {
+    const profData = await Profile.findAll();
+    res.json(profData);
+  } catch (err) {
+    res.json('somethings fucky');
+  }
+});
+
 //post method to root
 router.post("/", async (req, res) => {
   try {
     const profileData = await Profile.create(req.body);
-
     req.session.save(() => {
       req.session.profile_id = profileData.id;
       req.session.logged_in = true;
-      req.status(200).json(profileData);
+      res.status(200).json(profileData);
     });
   } catch (err) {
     res.status(400).json(err);
@@ -20,9 +29,8 @@ router.post("/", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const profileData = await Profile.findOne({
-      where: { username: req.body.username },
+      where: { userName: req.body.userName },
     });
-
     //if statement validating username======================================================================================
     if (!profileData) {
       res
@@ -43,15 +51,14 @@ router.post("/login", async (req, res) => {
         });
       return;
     }
-
     //session for keeping profile logged in====================================================================================
     req.session.save(() => {
       req.session.profile_id = profileData.id;
       req.session.logged_in = true;
-
+    
       res.json({
         profile: profileData,
-        message: "Welcome back! You're now logged in.",
+        message: "Welcome back! You're now logged in."
       });
     });
   } catch (err) {
