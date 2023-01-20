@@ -48,4 +48,4 @@ const logIn = async (event) => {
 };
 
 document.querySelector(/*sign up input element*/).addEventListener('submit', signUp);
-document.querySelector(/*log in input element*/).addEventListener('submit', signUp);
+document.querySelector(/*log in input element*/).addEventListener('submit', logIn);
