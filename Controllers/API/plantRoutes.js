@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Plant } = require('../../models');
+const { Profile, Plant } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //auth verifies logged in before executing==========================================================================
@@ -77,8 +77,37 @@ router.put('/:id', withAuth, async (req, res) => {
     }
 
   });  
+
+  
   router.get('/', async (req, res) => {
-    res.json({message : 'plants are here'});
+    // res.json({message : 'plants are here'});
+    Plant.findAll({
+      attributes: [
+        'name',
+        'species',
+        'scientificName',
+        'adoptionDate',
+        'height',
+        'stage',
+        'waterNeeds',
+        'watered',
+        'sunshineNeeds',
+        'generalNotes'
+      ],
+
+      include: [
+        {
+            model: Profile,
+            attributes: ['username']
+        },
+      ],
+    })
+    .then(dbPlantData => res.json(dbPlantData))
+    // if there was a server error, return the error
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
   })
 
   module.exports = router;
