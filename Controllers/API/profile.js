@@ -63,7 +63,6 @@ router.post("/login", async (req, res) => {
     const profileData = await Profile.findOne({
       where: { username: req.body.username },
     });
-    res.json(profileData)
     //if statement validating username======================================================================================
     if (!profileData) {
       res
@@ -109,5 +108,12 @@ router.post("/logout", (req, res) => {
     res.status(404).end();
   }
 });
+
+router.delete("/:id", (req, res) => {
+  const deadProfile = Profile.destroy({
+    where: { id: req.params.id }
+  });
+  res.json('profile destroyed');
+})
 
 module.exports = router;
