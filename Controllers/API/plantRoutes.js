@@ -1,4 +1,5 @@
 const express = require('express');
+const sequelize = require('../../config/Connection');
 const router = express.Router();
 const { Plant } = require('../../models');
 const withAuth = require('../../utils/auth');
@@ -77,8 +78,28 @@ router.put('/:id', withAuth, async (req, res) => {
     }
 
   });  
-  router.get('/', async (req, res) => {
-    res.json({message : 'plants are here'});
-  })
+  // router.get('/', async (req, res) => {
+  //   // res.json({message : 'plants are here'});
+  //   const plants = await Plant.findAll();
+  //   res.json(plants);
+  // })
 
-  module.exports = router;
+
+//this bullshit is me figuring out how to increment all columns at the same time, it works
+
+  // router.put('/', async (req, res) => {
+
+  //   const updatedWater = await Plant.update(
+	// 		{ 
+  //       height: sequelize.literal('height + 5'),
+  //     },
+  //     {
+  //       where: {
+  //        watered: false,
+  //    },
+  //   }
+	// 	  );
+  //   res.json(updatedWater)
+  // })
+
+  // module.exports = router;
