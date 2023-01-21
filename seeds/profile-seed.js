@@ -2,11 +2,11 @@ const { Profile } = require('../Models');
 
 const profileSeeds = [
     {
-      userName: 'JuiceJabroney',
+      username: 'JuiceJabroney',
       password: 'starfox1!'
     },
     {
-      userName: 'GoshOfWar',
+      username: 'GoshOfWar',
       password: 'HorseCow3#'
     }        
 ];
