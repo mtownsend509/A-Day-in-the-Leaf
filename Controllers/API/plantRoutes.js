@@ -63,6 +63,7 @@ router.put('/:id', withAuth, async (req, res) => {
           profile_id: req.session.profile_id,
         },
       });
+      
 //if plant ID not found throw 404 error============================================================================
       if (!plantData) {
         res.status(404).json({ message: 'There is no plant with this id!' });
