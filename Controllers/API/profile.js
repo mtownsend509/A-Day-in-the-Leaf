@@ -61,7 +61,7 @@ router.post("/", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const profileData = await Profile.findOne({
-      where: { userName: req.body.userName },
+      where: { username: req.body.username },
     });
     //if statement validating username======================================================================================
     if (!profileData) {
