@@ -12,10 +12,10 @@
                         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                               <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-[#2c2e28] md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-[#2c2e28]">
                                     <li>
-                                          <a href="#" class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:text-[#C4CEB4] md:p-0" aria-current="page">Home</a>
+                                          <a href="#" id="home-button" class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:text-[#C4CEB4] md:p-0" aria-current="page">Home</a>
                                     </li>
                                     <li>
-                                          <a href="#" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Log out</a>
+                                          <a href="#" id="logout-button" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Log out</a>
                                     </li>
                                     <li>
                                           <a href="#" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Contact</a>
@@ -26,7 +26,7 @@
             </nav>
 
             <div class="grid grid-cols-10 mt-5 font-serif">
-                  <button class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-[#2c2e28] rounded-lg group bg-gradient-to-br from-[#2c2e28] to-[#284c20] group-hover:from-[#2c2e28] group-hover:to-[#284c20] hover:text-[#C4CEB4] focus:ring-4 focus:outline-none focus:ring-[#284c20] col-start-9 col-end-10">
+                  <button id="plant-add" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-[#2c2e28] rounded-lg group bg-gradient-to-br from-[#2c2e28] to-[#284c20] group-hover:from-[#2c2e28] group-hover:to-[#284c20] hover:text-[#C4CEB4] focus:ring-4 focus:outline-none focus:ring-[#284c20] col-start-9 col-end-10">
                         <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#C4CEB4] rounded-md group-hover:bg-opacity-0">
                               <i class="fa-solid fa-plus"></i> Add plant
                         </span>
@@ -269,7 +269,51 @@
                                           </div>
                                     <! end cards -->
                                     </div>
+                                <!--    <div id="modal" class="modal">
+                                          <form>
+                                                <div>
+                                                      <input type="text" name="name" placeholder=" " required />
+                                                      <label for="name">plant name</label>
+                                                </div>
+                                                <div class="hide">
+                                                      <input type="text" name="species" placeholder=" " required />
+                                                      <label for="species">species</label>
+                                                </div>
+                                                <div class="hide">
+                                                      <input type="text" name="scientificName" placeholder=" " required />
+                                                      <label for="scientificName">Scientific Name</label>
+                                                </div>
+                                                <div class="hide">
+                                                      <input type="text" name="adoptionDate" placeholder=" " required />
+                                                      <label for="adoptionDate">Adoption date</label>
+                                                </div>
+                                                <div class="hide">
+                                                      <input type="number" name="height" placeholder=" " required />
+                                                      <label for="height">plant height</label>
+                                                </div>
+                                                <div class="hide">
+                                                      <input type="text" name="stage" placeholder=" " required />
+                                                      <label for="stage">plant life stage</label>
+                                                </div>
+                                                <div class="hide">
+                                                      <input type="text" name="waterNeeds" placeholder=" " required />
+                                                      <label for="waterNeeds">Water Needs</label>
+                                                </div>
+                                                <div class="hide">
+                                                      <input type="text" name="sunshineNeeds" placeholder=" " required />
+                                                      <label for="sunshineNeeds">sunshine needs</label>
+                                                </div>
+                                                <div class="hide">
+                                                      <input type="text" name="generalNotes" placeholder=" " required />
+                                                      <label for="generalNotes">General Notes</label>
+                                                </div>
+                                                <div>
+                                                      <input type="button" id="form-submit">
+                                                </div>
+                                          </form> -->
+                                    </div>
                               </div>
                         </div>
                   </div>
             </div>
+      <script src="/javascript/logout.js"></script>
