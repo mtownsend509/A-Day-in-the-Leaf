@@ -3,6 +3,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "bcrypt": "^5.1.0",
+    "chalk": "^4.0.0",
     "connect-session-sequelize": "^7.1.5",
     "cron": "^2.2.0",
     "dotenv": "^16.0.3",
