@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -44,6 +45,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening at port 3001'));
+  app.listen(PORT, () => console.log(chalk.bgHex('#2c2e28').white(`Now listening at port ${PORT}`)));
 });
 

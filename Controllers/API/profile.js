@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Profile } = require("../../models");
+const { Profile, Plant } = require("../../models");
 
 //for insomnia testing
 router.get('/', async (req, res) => {
@@ -10,6 +10,38 @@ router.get('/', async (req, res) => {
   } catch (err) {
     res.json('somethings fucky');
   }
+});
+
+router.get('/:id', (req, res) => {
+  Profile.findOne({
+    attributes: { 
+      exclude: ['password']
+    },
+    where: {
+      id: req.params.id
+    },
+    include: [
+      {model: Plant,
+      attributes: [
+        'name',
+        'species',
+        'scientificName',
+        'adoptionDate',
+        'height',
+        'stage',
+        'waterNeeds',
+        'watered',
+        'sunshineNeeds',
+        'generalNotes'
+      ]}
+    ]
+  })
+  .then(dbProfileData => res.json(dbProfileData))
+  // if there was a server error, return the error
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
 });
 
 //post method to root
@@ -29,7 +61,7 @@ router.post("/", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const profileData = await Profile.findOne({
-      where: { userName: req.body.userName },
+      where: { username: req.body.username },
     });
     //if statement validating username======================================================================================
     if (!profileData) {
