@@ -5,11 +5,16 @@ const logout = async () => {
   });
 
   if (response.ok) {
-      //navigation to refresh page in logout state
+    console.log('this happened');
       document.location.replace('/');
   } else {
       window.alert('logout failed');
   }
 };
 
-document.querySelector(/*html element that is logout*/).addEventListener('click', logout);
+const home = () => {
+    document.location.replace('/');
+};
+
+document.querySelector('#logout-button').addEventListener('click', logout);
+document.querySelector('#home-button').addEventListener('click', home);
