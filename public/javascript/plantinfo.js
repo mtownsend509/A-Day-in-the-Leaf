@@ -1,4 +1,5 @@
-const plantType = {whateverthevariableis}
+
+let plantType = {whatevertheinputvariableis}
 
 switch(plantType) {
       case "houseplant": houseplantImage();
@@ -11,8 +12,6 @@ switch(plantType) {
       break;
       case "palm": palmImage();
       break;
-      case "flowering": floweringImage();
-      break;
       case "other": generalImage();
       break;
       default: generalImage();
@@ -20,16 +19,42 @@ switch(plantType) {
 }
 
 const houseplantImage = () => {
-      var planticonimage = document.getElementById("planticon").src('./houseplant.png');   
+      var plantspanEL = document.getElementsByClassName("plantSpan");
+      // $(".plantSpan").addClass("plantSpan bg-[#284c20] text-[#eae3ba]");
+      plantspanEL.addClass("bg-[#56a554]")
+      $(".planticon").setAttribute('src', '/houseplant.png');
 }
 
- const treeImage = () => {
-       var planticonimage = document.getElementById("planticon").src('./tree.png'); 
- }
+const cactusImage = () => {
+      var plantspanEL = document.getElementsByClassName("plantSpan");
+      plantspanEL.addClass("bg-[#8d4029]")
+      $(".planticon").setAttribute('src', '/cactus.png');
+}
 
- const cactusImage = () => {
-       var planticonimage = document.getElementById("planticon").src('./cactus.png');
- }
+const treeImage = () => {
+      var plantspanEL = document.getElementsByClassName("plantSpan");
+      plantspanEL.addClass("bg-[#284c20]")
+      $(".planticon").setAttribute('src', '/tree.png');
+}
+
+const floweringImage = () => {
+      var plantspanEL = document.getElementsByClassName("plantSpan");
+      plantspanEL.addClass("bg-[#a487b2]")
+      $(".planticon").setAttribute('src', '/houseplant.png');
+}
+
+const palmImage = () => {
+      var plantspanEL = document.getElementsByClassName("plantSpan");
+      plantspanEL.addClass("bg-[#40a1a9]")
+      $(".planticon").setAttribute('src', '/houseplant.png');
+}
+
+const generalImage = () => {
+      var plantspanEL = document.getElementsByClassName("plantSpan");
+      plantspanEL.addClass("bg-[#284c20]")
+      $(".planticon").setAttribute('src', '/houseplant.png');
+}
+
 
 // function show_image(src, width, height, alt) {
 //       var img = document.createElement("img");
