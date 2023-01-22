@@ -38,36 +38,28 @@ const plantAdd = () => {
   document.location.replace('dashboard/addPlant')
 }
 
-const submitPlant = async () => {
+const submitPlant = async (event) => {
+  event.preventDefault()
+
   var name = document.querySelector('#name').value;
   var species = document.querySelector('#species').value;
   var scientificName = document.querySelector('#scientific-name').value;
   var adoptionDate = document.querySelector('#adoption-date').value;
   var height = parseInt(document.querySelector('#height').value);
+  //this next stuff is complicated but needs to be this way since we
+  //are letting the user select from options
   var stage = document.querySelector('#stage').value;
+  // var stage = 'mature'
   var waterNeeds = document.querySelector('#water').value;
-  var watered = false;
+  var watered = true;
   var generalNotes = document.querySelector('#general-notes').value;
   var sunshineNeeds = document.querySelector('#sunshine-needs').value;
   var plantType = document.querySelector('#plant-type').value;
+  // var plantType = 'flower';
   var waterCurrent = 0;
-  var waterFrequency = 7;
+  var waterFrequency = document.querySelector('#water').value;
   var profile_id = 2
-  // var plantObject = {
-  //   name: name,
-  //   species: species,
-  //   scientificName: scientificName,
-  //   adoptionDate: adoptionDate,
-  //   height: height,
-  //   stage: stage,
-  //   waterNeeds: waterNeeds,
-  //   watered: false,
-  //   sunshineNeeds: sunshineNeeds,
-  //   plantType: type,
-  //   waterCurrent: 0,
-  //   waterFrequency: 7,
-  //   generalNotes: generalNotes,
-  // }
+ 
   const newPlant = await fetch('/api/plant', {
     method: 'POST',
     body: JSON.stringify({name, species, scientificName, adoptionDate, height,
@@ -75,7 +67,7 @@ const submitPlant = async () => {
   generalNotes, profile_id}),
     headers: {'Content-Type': 'application/json'},
   })
-  console.log(response);
+  console.log('got here?');
 }
 
 plantWater = () => {
@@ -83,7 +75,7 @@ plantWater = () => {
 }
 
 plantDelete = () => {
-  
+
 }
 
 document.querySelector('#logout-button').addEventListener('click', logout);
