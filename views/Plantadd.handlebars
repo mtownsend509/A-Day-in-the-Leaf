@@ -44,6 +44,8 @@
       <div class="text-xl text-[#2c2e28] font-semibold mb-5">
             <h2>Welcome {{username}}!</h2>
       </div>
+
+{{!-- Name --}}
       <div class="grid md:grid-cols-2 md:gap-6">
             <div class="relative z-0 w-full mb-6 group">
                   <input type="text" name="floating_plant_name" id="floating_plant_name"
@@ -54,6 +56,17 @@
                         your plant</label>
             </div>
 
+{{!-- Species --}}
+            <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="relative z-0 w-full mb-6 group">
+                  <input type="text" name="floating_species" id="floating_species"
+                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
+                        placeholder=" " required />
+                  <label for="floating_species"
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Plant Species</label>
+            </div>
+
+{{!-- Scientific Name --}}
             <div class="relative z-0 w-full mb-6 group">
                   <input type="text" name="floating_scientific_name" id="floating_scientific_name"
                         class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
@@ -63,6 +76,87 @@
                         (scientific) name</label>
             </div>
 
+{{!-- Adoption Date --}}
+            <div class="relative z-0 w-full mb-6 group text-[#2c2e28]">
+                  <input type="text" name="floating_adoption_date" id="floating_adoption_date"
+                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-[#225f69] peer"
+                        placeholder=" " required />
+                  <label for="floating_adoption_date"
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Adoption
+                        Date</label>
+                  {{!-- maybe add today's date using hbs and helper --}}
+                  <p>(If you Don't know the exact adoption date, enter today's date.)</p>
+            </div>
+
+{{!-- Height --}}
+            <div class="relative z-0 w-full mb-6 group">
+                  {{!-- <input type="radio" name="floating_height" id="floating_height"
+                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
+                        placeholder=" " required />
+                  <label for="floating_height"
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm
+                        password</label> --}}
+                  <p>Which Height Option Best Matches your Plant?</p>
+                  <form>
+                        <input type="radio" id="option1" name="height" value="">
+                        <label for="option1">0"-5"</label><br>
+                        <input type="radio" id="option2" name="height" value="">
+                        <label for="option2">6"-10"</label><br>
+                        <input type="radio" id="option3" name="height" value="">
+                        <label for="option2">11"-23"</label><br>
+                        <input type="radio" id="option3" name="height" value="">
+                        <label for="option2">24"+</label><br>
+                  </form>
+            </div>
+
+{{!-- Stage --}}
+            <div class="relative z-0 w-full mb-6 group">
+                  {{!-- <input type="radio" name="floating_height" id="floating_height"
+                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
+                        placeholder=" " required />
+                  <label for="floating_height"
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm
+                        password</label> --}}
+                  <p>Which Growth Stage Best Matches your Plant?</p>
+                  <form>
+                        <input type="radio" id="option1" name="stage" value="">
+                        <label for="option1">Seed</label><br>
+                        <input type="radio" id="option2" name="stage" value="">
+                        <label for="option2">Sprout</label><br>
+                        <input type="radio" id="option3" name="stage" value="">
+                        <label for="option2">Sapling</label><br>
+                        <input type="radio" id="option3" name="stage" value="">
+                        <label for="option2">Mature</label><br>
+                  </form>
+            </div>           
+
+                   {{!-- Watered Cron Job code? --}}    
+           
+{{!-- Water Needs --}}
+            <div class="relative z-0 w-full mb-6 group">
+                  <p>
+                  Enter notes about watering needs. Does it need misted periodiaclly?
+                  </p>
+                  <input type="text" name="floating_water_notes" id="floating_water_notes"
+                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
+                        placeholder=" " required />
+                  <label for="floating_water_notes"
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"></label>
+            </div>
+
+{{!-- Sunshine Needs --}}
+            <div class="relative z-0 w-full mb-6 group">
+                  <p>
+                  Enter notes about Sunshine needs. Full sun, half sun half shade, full shade?
+                  </p>
+                  <input type="text" name="floating_sunshine_notes" id="floating_sunshine_notes"
+                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
+                        placeholder=" " required />
+                  <label for="floating_sunshine_notes"
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"></label>
+            </div>
+
+{{!-- Type --}}
             <div class="relative z-0 w-full mb-6 group">
                   {{!-- <input type="radio" name="floating_plant_type" id="floating_plant_type"
                         class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
@@ -101,42 +195,9 @@
                         {{!-- <input type="radio" id="option#" name="plant_type" value="">
                         <label for="option#">Type</label> --}}
                   </form>
-            </div>
+            </div>           
 
-            <div class="relative z-0 w-full mb-6 group text-[#2c2e28]">
-                  <input type="text" name="floating_adoption_date" id="floating_adoption_date"
-                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-[#225f69] peer"
-                        placeholder=" " required />
-                  <label for="floating_adoption_date"
-                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Adoption
-                        Date</label>
-                  {{!-- maybe add today's date using hbs and helper --}}
-                  <p>(If you Don't know the exact adoption date, enter today's date.)</p>
-            </div>
-            <div class="relative z-0 w-full mb-6 group">
-                  {{!-- <input type="radio" name="floating_height" id="floating_height"
-                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
-                        placeholder=" " required />
-                  <label for="floating_height"
-                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm
-                        password</label> --}}
-                  <p>Which Height Option Best Matches your Plant?</p>
-                  <form>
-                        <input type="radio" id="option1" name="height" value="">
-                        <label for="option1">0"-5"</label><br>
-                        <input type="radio" id="option2" name="height" value="">
-                        <label for="option2">6"-10"</label><br>
-                        <input type="radio" id="option3" name="height" value="">
-                        <label for="option2">11"-23"</label><br>
-                        <input type="radio" id="option3" name="height" value="">
-                        <label for="option2">24"+</label><br>
-                  </form>
-            </div>
-
-
-            {{!-- Watered Cron Job code? --}}
-
-
+{{!-- General Notes --}}
             <div class="relative z-0 w-full mb-6 group">
                   <p>Any General Notes you'd like to add? Consider adding information regarding plant health, unique
                         needs,
@@ -147,6 +208,7 @@
                   <label for="floating_gen_notes"
                         class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"></label>
             </div>
+{{!-- Submit Button --}}
             <div class="inline-flex items-center relative z-0 w-60 mb-6 group"></div>
             <button type="submit" id="newPlant_submit"
                   class="w-80 text-[#C4CEB4] bg-[#2c2e28] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2">Submit
