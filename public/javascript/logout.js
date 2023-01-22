@@ -1,3 +1,19 @@
+var username = document.cookie.slice(9); 
+console.log('/api/profile/' + username);
+
+var profile_id = ''
+
+const getProfID = async () => {
+    const response = await fetch('/api/profile/' + username);
+    response.json().then((data) => {
+      profile_id = data.id;
+    });
+    return response
+    };
+
+getProfID();
+
+console.log
 
 const logout = async () => {
   const response = await fetch('/api/profile/logout', {
@@ -58,7 +74,6 @@ const submitPlant = async (event) => {
   // var plantType = 'flower';
   var waterCurrent = 0;
   var waterFrequency = document.querySelector('#water').value;
-  var profile_id = 2
  
   const newPlant = await fetch('/api/plant', {
     method: 'POST',
