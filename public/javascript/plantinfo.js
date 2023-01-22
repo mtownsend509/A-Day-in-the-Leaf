@@ -13,7 +13,7 @@ switch(plantType) {
       break;
 }
 
-const houseplantImage = () {
+const houseplantImage = () => {
       var planticonimage = document.getElementById("planticon");
       $
 }
