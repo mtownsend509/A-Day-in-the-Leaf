@@ -86,7 +86,7 @@ router.get('/plant/:id', (req, res) => {
 router.get('/addPlant', (req, res) => {
       res.render('Plantaddtest',{
             loggedIn: req.session.loggedIn
-      });
+      }).JSON(loggedIn);
 })
 
 module.exports = router;
