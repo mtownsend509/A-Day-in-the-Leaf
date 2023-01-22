@@ -24,7 +24,7 @@ const singlePlantPage = async (event) => {
       console.log(event.target.id);
       document.location.replace('dashboard/plant/' + event.target.id);
   } else {
-      console.log('shiiiit')
+      console.log('shooooot')
   }
 
 }
@@ -38,4 +38,6 @@ document.querySelector('#home-button').addEventListener('click', home);
 if (document.querySelector('#plants-container')) {
   document.querySelector('#plants-container').addEventListener('click', singlePlantPage)
 }
+if (document.querySelector('#plant-add')) {
 document.querySelector('#plant-add').addEventListener('click', plantAdd);
+};
