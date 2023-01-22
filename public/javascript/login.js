@@ -1,3 +1,4 @@
+
 const logIn = async (event) => {
   event.preventDefault();
 
@@ -20,4 +21,7 @@ const logIn = async (event) => {
   } 
 };
 
+
+
 document.querySelector("#login_submit").addEventListener('click', logIn);
+

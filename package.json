@@ -1,4 +1,21 @@
 {
+  "name": "a-day-in-the-leaf",
+  "version": "1.0.0",
+  "description": "Saving plants byte by byte! An app to track your plant’s watering schedule, light exposure, growth, and health issues, with an option to create your own tracking category.",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtownsend509/A-Day-in-the-Leaf.git"
+  },
+  "author": "Katrina Baker, Zach Beiser, Abigail Doyle, Matthew Townsend",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mtownsend509/A-Day-in-the-Leaf/issues"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
