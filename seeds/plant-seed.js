@@ -16,6 +16,7 @@ const plants = [
       // fertilizerType: 'yes',
       // idealTemp: 98,
       generalNotes: 'Plant keeps trying to die',
+      plantType: 'type 1',
       profile_id: 1
     },
     {
@@ -33,6 +34,9 @@ const plants = [
       // fertilizerType: 'yes',
       // idealTemp: 98,
       generalNotes: 'neat plant bro',
+      plantType: 'type 2',
+      waterCurrent: 1,
+      waterMax: 7,
       profile_id: 1
     },
     {
@@ -50,6 +54,9 @@ const plants = [
         // fertilizerType: 'yes',
         // idealTemp: 98,
         generalNotes: 'solid plant 9/10, would be 10 but nobody eats Kale',
+        plantType: 'type 3',
+        waterCurrent: 1,
+        waterMax: 7,
         profile_id: 2
       },
       {
@@ -67,6 +74,9 @@ const plants = [
         // fertilizerType: 'yes',
         // idealTemp: 98,
         generalNotes: 'Do not eat the forbidden nature corndog',
+        plantType: 'type 3',
+        waterCurrent: 1,
+        waterMax: 7,
         profile_id: 2
       },
 ];

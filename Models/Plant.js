@@ -48,6 +48,16 @@ Plant.init(
         sunshineNeeds: {
             type: DataTypes.STRING
         },
+        plantType: {
+            type: DataTypes.STRING
+        },
+        //these next two are for cron job
+        waterCurrent: {
+            type: DataTypes.INTEGER
+        },
+        waterMax: {
+            type: DataTypes.INTEGER
+        },
         // humidityNeeds: {
         //     type: DataTypes.STRING
         // },
