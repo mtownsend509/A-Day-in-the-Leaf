@@ -1,63 +1,28 @@
-{{!-- <nav class="bg-[#2c2e28] py-2 sm:px-4 sticky top-[0px]">
-      <div class="container flex flex-wrap items-center justify-between mx-auto">
-            <a href="" class="flex items-center">
-                  <img src="hangingPlant.png" class="h-[5rem] sm:h-[5rem]" alt="Logo" />
-                  <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-[#C4CEB4]">A Day in the
-                        Leaf</span>
-            </a> --}}
-
-
-            <nav class="bg-[#2c2e28] py-2 sm:px-4">
-                  <div class="container flex flex-wrap items-center justify-between mx-auto">
-                        <a href="" class="flex items-center">
-                              {{!-- <style type="text/css" media="screen">
-                              logoImg {
-                              background-image: url();
-                              background-repeat: no-repeat;
-                              width: 10px;
-                              height: 20px;
-                              }
-                              </style> --}}
-
-
-                              <img src="hangingPlant.png" class="h-[5rem] sm:h-[5rem]" alt="Logo" />
-                              <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-[#C4CEB4]">A
-                                    Day in the Leaf</span>
-                        </a>
-
-
-                        <button data-collapse-toggle="navbar-default" type="button"
-                              class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-[#2c2e28] focus:outline-none focus:ring-2 focus:ring-gray-200"
-                              aria-controls="navbar-default" aria-expanded="false">
-                              <span class="sr-only">Open main menu</span>
-                              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                                          clip-rule="evenodd"></path>
-                              </svg>
-                        </button>
-                        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                              <ul
-                                    class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-[#2c2e28] md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-[#2c2e28]">
-                                    <li>
-                                          <a href="#"
-                                                class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:text-[#C4CEB4] md:p-0"
-                                                aria-current="page">Home</a>
-                                    </li>
-                                    <li>
-                                          <a href="#"
-                                                class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Log
-                                                out</a>
-                                    </li>
-                                    <li>
-                                          <a href="#"
-                                                class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Contact</a>
-                                    </li>
-                              </ul>
-                        </div>
+<nav class="bg-[#2c2e28] py-2 sm:px-4 sticky top-[0px]">
+            <div class="container flex flex-wrap items-center justify-between mx-auto">
+                  <a href="" class="flex items-center">
+                        <img src="./hangingPlant.png" class="h-[5rem] sm:h-[5rem]" alt="Logo" />
+                        <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-[#C4CEB4]">A Day in the Leaf</span>
+                  </a>
+                  <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-[#2c2e28] focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                  </button>
+                  <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                        <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-[#2c2e28] md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-[#2c2e28]">
+                              <li>
+                                    <a href="#" id="home-button" class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:text-[#C4CEB4] md:p-0" aria-current="page">Home</a>
+                              </li>
+                              <li>
+                                    <a href="#" id="logout-button" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Log out</a>
+                              </li>
+                              <li>
+                                    <a href="#" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Contact</a>
+                              </li>
+                        </ul>
                   </div>
-            </nav>
+            </div>
+      </nav>
 
             <main class="grid grid-cols-8 gap-4 pt-20">
                   <div class="col-start-2 col-end-4 bg-[#C4CEB4] text-[#225f69] rounded-lg flex drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]"
@@ -132,9 +97,10 @@
 
                         <br>
 
-                        <div class="absolute bottom-2 right-2 text-2xl">
-                              <button><i class="fa-regular fa-file-pen" title="Edit this plant"></i></button>
-                        </div>
-
+                  <div class="absolute bottom-2 right-2 text-2xl">
+                        <button><i class="fa-regular fa-file-pen" title="Edit this plant"></i></button>
                   </div>
-            </main>
+                  
+            </div>
+            <script src="/javascript/logout.js"></script>
+      </main>
