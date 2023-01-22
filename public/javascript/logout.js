@@ -1,3 +1,4 @@
+console.log('this is connected')
 const logout = async () => {
   const response = await fetch('/api/profile/logout', {
       method: 'POST',
@@ -16,13 +17,27 @@ const home = () => {
     document.location.replace('/');
 };
 
-// const plantAdd = () => {
-//     document.querySelector('#modal').style.display = "block";
-//     // for(i=0; i < document.querySelector('#modal').clientHeight; i++) {
-//     // document.querySelector('#modal').children[i].style.display = "block"
-//     // }
-// }
+const singlePlantPage = async (event) => {
+  console.log('card container works')
+  if (event.target.class = "relative px-4 -mt-16") {
+      console.log('clicked a plant');
+      console.log(event.target.id);
+      document.location.replace('dashboard/plant/' + event.target.id);
+  } else {
+      console.log('shooooot')
+  }
+
+}
+
+const plantAdd = () => {
+  document.location.replace('dashboard/matt')
+}
 
 document.querySelector('#logout-button').addEventListener('click', logout);
 document.querySelector('#home-button').addEventListener('click', home);
-// document.querySelector('#plant-add').addEventListener('click', plantAdd);
+if (document.querySelector('#plants-container')) {
+  document.querySelector('#plants-container').addEventListener('click', singlePlantPage)
+}
+if (document.querySelector('#plant-add')) {
+document.querySelector('#plant-add').addEventListener('click', plantAdd);
+};
