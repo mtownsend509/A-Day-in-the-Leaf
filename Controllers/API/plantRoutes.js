@@ -179,7 +179,9 @@ router.post('/', (req, res) => {
         waterNeeds: req.body.waterNeeds,
         watered: req.body.watered,
         sunshineNeeds: req.body.sunshineNeeds,
-
+        plantType: req.body.plantType,
+        waterCurrent: 0,
+        waterMax: req.body.waterMax,
         generalNotes: req.body.generalNotes,
         profile_id: req.body.profile_id
         // ...req.body,
