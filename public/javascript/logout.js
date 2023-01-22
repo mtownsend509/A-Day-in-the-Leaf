@@ -78,6 +78,14 @@ const submitPlant = async () => {
   console.log(response);
 }
 
+plantWater = () => {
+
+}
+
+plantDelete = () => {
+  
+}
+
 document.querySelector('#logout-button').addEventListener('click', logout);
 document.querySelector('#home-button').addEventListener('click', home);
 if (document.querySelector('#plants-container')) {
@@ -88,4 +96,10 @@ document.querySelector('#plant-add').addEventListener('click', plantAdd);
 };
 if (document.querySelector('#plant-submit')) {
   document.querySelector('#plant-submit').addEventListener('click', submitPlant);
+}
+if (document.querySelector('fa-solid fa-droplet')) {
+  document.querySelector('fa-solid fa-droplet').addEventListener('click', plantWater)
+}
+if (document.querySelector('fa-solid fa-trash')) {
+  document.querySelector('fa-solid fa-trash').addEventListener('click', plantDelete)
 }
