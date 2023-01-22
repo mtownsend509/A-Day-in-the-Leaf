@@ -24,69 +24,78 @@
             </div>
       </nav>
 
-      <main class="grid grid-cols-8 gap-4 pt-20">
-            <div class="col-start-2 col-end-4 bg-[#C4CEB4] text-[#225f69] rounded-lg flex drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]" id="plantimage">
-                  <img src="./placeholder.png" alt="plant image" class="w-full object-cover object-center rounded-lg content-center">
-            </div>
-
-            <div class="col-start-4 col-end-8 font-serif bg-[#C4CEB4] text-[#225f69] rounded-lg pb-5 drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)] leading-8 relative">
-                  <h1 class="font-semibold text-3xl py-5 text-center">
-                         {{name}}  {{!-- {{plant.name}} --}}
-                  </h1>
-                  <div class="flex flex-row px-10 gap-5">
-                        <h2 class="basis-1/3 font-bold">Species: </h2>
-                        <h3 class="basis-2/3 font-semibold">{{species}} {{!-- {{plant.species}} --}}</h3>
-                  </div>
-                  <div class="flex flex-row px-10 gap-5">
-                        <h2 class="basis-1/3 font-bold">Scientific name: </h2>
-                        <h3 class="basis-2/3 font-semibold">{{scientificName}} {{!-- {{plant.scientificName}} --}}</h3>
-                  </div>
-                  <div class="flex flex-row px-10 gap-5">
-                        <h2 class="basis-1/3 font-bold">Adoption date: </h2>
-                        <h3 class="basis-2/3 font-semibold">{{adoptionDate}} {{!-- {{plant.adoptionDate}} --}}</h3>
-                  </div>
-                  <div class="flex flex-row px-10 gap-5">
-                        <h2 class="basis-1/3 font-bold">Height: </h2>
-                        <h3 class="basis-2/3 font-semibold">{{height}} {{!-- {{plant.height}} --}}</h3>
-                  </div>
-                  <div class="flex flex-row px-10 gap-5">
-                        <h2 class="basis-1/3 font-bold">Stage: </h2>
-                        <h3 class="basis-2/3 font-semibold">{{stage}} {{!-- {{plant.stage}} --}}</h3>
-                  </div>
-                  <div class="flex flex-row px-10 gap-5">
-                        <h2 class="basis-1/3 font-bold">Water frequency: </h2>
-                        <h3 class="basis-2/3 font-semibold">{{waterNeeds}} {{!-- {{plant.waterNeeds}} --}}</h3>
-                  </div>
-                  <div class="flex flex-row px-10 gap-5">
-                        <h2 class="basis-1/3 font-bold">Sun Requirement: </h2>
-                        <h3 class="basis-2/3 font-semibold">{{sunshineNeeds}} {{!-- {{plant.sunshineNeeds}} --}}</h3>
-                  </div>
-                  <div class="flex flex-row px-10 gap-5">
-                        <h2 class="basis-1/3 font-bold">Humidity Requirement: </h2>
-                        <h3 class="basis-2/3 font-semibold">{{humidityNeeds}} {{!-- {{plant.humidityNeeds}} --}}</h3>
-                  </div>
-                  <div class="flex flex-row px-10 gap-5">
-                        <h2 class="basis-1/3 font-bold">Soil Type: </h2>
-                        <h3 class="basis-2/3 font-semibold">{{soilType}} {{!-- {{plant.soilType}} --}}</h3>
-                  </div>
-                  <div class="flex flex-row px-10 gap-5">
-                        <h2 class="basis-1/3 font-bold">Fertilizer Type: </h2>
-                        <h3 class="basis-2/3 font-semibold">{{fertilizerType}} {{!-- {{plant.fertilizerType}} --}}</h3>
-                  </div>
-                  <div class="flex flex-row px-10 gap-5">
-                        <h2 class="basis-1/3 font-bold">Temperature: </h2>
-                        <h3 class="basis-2/3 font-semibold">{{idealTemp}} {{!-- {{plant.idealTemp}} --}}</h3>
-                  </div>
-                  <div class="flex flex-row px-10 gap-5">
-                        <h2 class="basis-1/3 font-bold">Watered today?: </h2>
-                        <h3 class="basis-2/3 font-semibold">{{watered}} {{!-- {{plant.watered}} --}}</h3>
-                  </div>
-                  <div class="flex flex-row px-10 gap-5">
-                        <h2 class="basis-1/3 font-bold">Notes: </h2>
-                        <h3 class="basis-2/3 font-semibold">{{generalNotes}} {{!-- {{plant.generalNotes}} --}}</h3>
+            <main class="grid grid-cols-8 gap-4 pt-20">
+                  <div class="col-start-2 col-end-4 bg-[#C4CEB4] text-[#225f69] rounded-lg flex drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]"
+                        id="plantimage">
+                        {{!-- <img src="./handingPlant.png" alt="plant image"
+                              class="w-full object-cover object-center rounded-lg content-center"> --}}
                   </div>
 
-                  <br>
+                  <div
+                        class="col-start-4 col-end-8 font-serif bg-[#C4CEB4] text-[#225f69] rounded-lg pb-5 drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)] leading-8 relative">
+                        <h1 class="font-semibold text-3xl py-5 text-center">
+                              {{name}} {{!-- {{plant.name}} --}}
+                        </h1>
+                        <div class="flex flex-row px-10 gap-5">
+                              <h2 class="basis-1/3 font-bold">Species: </h2>
+                              <h3 class="basis-2/3 font-semibold">{{species}} {{!-- {{plant.species}} --}}</h3>
+                        </div>
+                        <div class="flex flex-row px-10 gap-5">
+                              <h2 class="basis-1/3 font-bold">Scientific name: </h2>
+                              <h3 class="basis-2/3 font-semibold">{{scientificName}} {{!-- {{plant.scientificName}} --}}
+                              </h3>
+                        </div>
+                        <div class="flex flex-row px-10 gap-5">
+                              <h2 class="basis-1/3 font-bold">Adoption date: </h2>
+                              <h3 class="basis-2/3 font-semibold">{{adoptionDate}} {{!-- {{plant.adoptionDate}} --}}
+                              </h3>
+                        </div>
+                        <div class="flex flex-row px-10 gap-5">
+                              <h2 class="basis-1/3 font-bold">Height: </h2>
+                              <h3 class="basis-2/3 font-semibold">{{height}} {{!-- {{plant.height}} --}}</h3>
+                        </div>
+                        <div class="flex flex-row px-10 gap-5">
+                              <h2 class="basis-1/3 font-bold">Stage: </h2>
+                              <h3 class="basis-2/3 font-semibold">{{stage}} {{!-- {{plant.stage}} --}}</h3>
+                        </div>
+                        <div class="flex flex-row px-10 gap-5">
+                              <h2 class="basis-1/3 font-bold">Water frequency: </h2>
+                              <h3 class="basis-2/3 font-semibold">{{waterNeeds}} {{!-- {{plant.waterNeeds}} --}}</h3>
+                        </div>
+                        <div class="flex flex-row px-10 gap-5">
+                              <h2 class="basis-1/3 font-bold">Sun Requirement: </h2>
+                              <h3 class="basis-2/3 font-semibold">{{sunshineNeeds}} {{!-- {{plant.sunshineNeeds}} --}}
+                              </h3>
+                        </div>
+                        <div class="flex flex-row px-10 gap-5">
+                              <h2 class="basis-1/3 font-bold">Humidity Requirement: </h2>
+                              <h3 class="basis-2/3 font-semibold">{{humidityNeeds}} {{!-- {{plant.humidityNeeds}} --}}
+                              </h3>
+                        </div>
+                        <div class="flex flex-row px-10 gap-5">
+                              <h2 class="basis-1/3 font-bold">Soil Type: </h2>
+                              <h3 class="basis-2/3 font-semibold">{{soilType}} {{!-- {{plant.soilType}} --}}</h3>
+                        </div>
+                        <div class="flex flex-row px-10 gap-5">
+                              <h2 class="basis-1/3 font-bold">Fertilizer Type: </h2>
+                              <h3 class="basis-2/3 font-semibold">{{fertilizerType}} {{!-- {{plant.fertilizerType}} --}}
+                              </h3>
+                        </div>
+                        <div class="flex flex-row px-10 gap-5">
+                              <h2 class="basis-1/3 font-bold">Temperature: </h2>
+                              <h3 class="basis-2/3 font-semibold">{{idealTemp}} {{!-- {{plant.idealTemp}} --}}</h3>
+                        </div>
+                        <div class="flex flex-row px-10 gap-5">
+                              <h2 class="basis-1/3 font-bold">Watered today?: </h2>
+                              <h3 class="basis-2/3 font-semibold">{{watered}} {{!-- {{plant.watered}} --}}</h3>
+                        </div>
+                        <div class="flex flex-row px-10 gap-5">
+                              <h2 class="basis-1/3 font-bold">Notes: </h2>
+                              <h3 class="basis-2/3 font-semibold">{{generalNotes}} {{!-- {{plant.generalNotes}} --}}
+                              </h3>
+                        </div>
+
+                        <br>
 
                   <div class="absolute bottom-2 right-2 text-2xl">
                         <button><i class="fa-regular fa-file-pen" title="Edit this plant"></i></button>
