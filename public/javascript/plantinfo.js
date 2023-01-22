@@ -15,7 +15,7 @@ switch(plantType) {
       break;
       case "other": generalImage();
       break;
-      default: houseplantImage();
+      default: generalImage();
       break;
 }
 
