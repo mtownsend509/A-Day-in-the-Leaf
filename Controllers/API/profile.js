@@ -109,4 +109,11 @@ router.post("/logout", (req, res) => {
   }
 });
 
+router.delete("/:id", (req, res) => {
+  const deadProfile = Profile.destroy({
+    where: { id: req.params.id }
+  });
+  res.json('profile destroyed');
+})
+
 module.exports = router;

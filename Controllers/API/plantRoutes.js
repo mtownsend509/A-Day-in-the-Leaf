@@ -179,6 +179,7 @@ router.post('/', (req, res) => {
         waterNeeds: req.body.waterNeeds,
         watered: req.body.watered,
         sunshineNeeds: req.body.sunshineNeeds,
+
         generalNotes: req.body.generalNotes,
         profile_id: req.body.profile_id
         // ...req.body,
@@ -219,3 +220,4 @@ router.put('/:id', (req, res) => {
 
 
   module.exports = router;
+

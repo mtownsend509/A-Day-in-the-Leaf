@@ -1,0 +1,23 @@
+
+html {
+      background-image: url(../assets/doodle.png);
+      font-family: serif;
+      /* background-color: #eae3ba; */
+}
+
+/* #plantimage {
+      background-image: url(../assets/placeholder.png);
+      background-size: contain;
+} */
+
+.modal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+}
+
+.hide {
+    display: none;
+}
