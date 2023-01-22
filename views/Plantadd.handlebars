@@ -59,6 +59,15 @@
 {{!-- Species --}}
             <div class="grid md:grid-cols-2 md:gap-6">
             <div class="relative z-0 w-full mb-6 group">
+                  <input type="text" name="floating_species" id="floating_species"
+                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
+                        placeholder=" " required />
+                  <label for="floating_species"
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Plant Species</label>
+            </div>
+
+{{!-- Scientific Name --}}
+            <div class="relative z-0 w-full mb-6 group">
                   <input type="text" name="floating_species" id="species"
                         class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
                         placeholder=" " required />
@@ -95,6 +104,25 @@
                         placeholder=" " required />
                   <label for="floating_scientific_name"
                         class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Plant's height (cm)</label>
+
+                  {{!-- <input type="radio" name="floating_height" id="floating_height"
+                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
+                        placeholder=" " required />
+                  <label for="floating_height"
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm
+                        password</label> --}}
+                  <p>Which Height Option Best Matches your Plant?</p>
+                  <form>
+                        <input type="radio" id="option1" name="height" value="">
+                        <label for="option1">0"-5"</label><br>
+                        <input type="radio" id="option2" name="height" value="">
+                        <label for="option2">6"-10"</label><br>
+                        <input type="radio" id="option3" name="height" value="">
+                        <label for="option2">11"-23"</label><br>
+                        <input type="radio" id="option3" name="height" value="">
+                        <label for="option2">24"+</label><br>
+                  </form>
+
             </div>
 
 {{!-- Stage --}}
@@ -106,7 +134,8 @@
                         class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm
                         password</label> --}}
                   <p>Which Growth Stage Best Matches your Plant?</p>
-                  {{!-- <form id = 'stage'>
+
+                  <form id = 'stage'>
                         <input type="radio" id="option1" name="stage" value="Seed">
                         <label for="option1">Seed</label><br>
                         <input type="radio" id="option2" name="stage" value="Sprout">
@@ -122,7 +151,6 @@
                   <option value="Sapling">Sapling</option>
                   <option value="Mature">Mature</option>
                   </select>
-
             </div>           
 
                    {{!-- Watered Cron Job code? --}}    
@@ -130,6 +158,7 @@
 {{!-- Water Needs --}}
             <div class="relative z-0 w-full mb-6 group">
                   <p>
+
                   How many days between waterings?
                   </p>
                   <input type="text" name="floating_water_notes" id="water"
@@ -144,6 +173,7 @@
                   <p>
                   Enter notes about Sunshine needs. Full sun, half sun half shade, full shade?
                   </p>
+
                   <input type="text" name="floating_sunshine_notes" id="sunshine-needs"
                         class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
                         placeholder=" " required />
@@ -190,6 +220,7 @@
                         {{!-- <input type="radio" id="option#" name="plant_type" value="">
                         <label for="option#">Type</label> --}}
                   </form>
+
                   <select id="plant-type" name="bad_day">
                   <option value="Flowering">Flowering</option>
                   <option value="Foliage" selected>Foliage</option>
@@ -198,6 +229,7 @@
                   <option value="Tree">Tree</option>
                   <option value="Other">Other</option>
                   </select>
+
             </div>           
 
 {{!-- General Notes --}}
