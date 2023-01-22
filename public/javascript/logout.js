@@ -22,7 +22,12 @@ const singlePlantPage = async (event) => {
   if (event.target.class = "relative px-4 -mt-16") {
       console.log('clicked a plant');
       console.log(event.target.id);
+      console.log(parseInt(event.target.id));
+      if(parseInt(event.target.id)) {
       document.location.replace('dashboard/plant/' + event.target.id);
+      } else {
+        console.log('doesnt work');
+      }
   } else {
       console.log('shooooot')
   }
