@@ -38,7 +38,18 @@ app.use(session(sess));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-app.use(express.static('images'))
+//test
+// app.use(express.static('public'))
+
+//test
+//  app.engine('handlebars', hbs.engine({   extname: '.hbs',
+//    defaultLayout: false,
+//    layoutsDir: 'views'
+//  }));
+
+//  app.set( 'view engine', 'hbs');
+
+app.use(express.static('images'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
