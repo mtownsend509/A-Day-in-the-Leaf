@@ -18,7 +18,7 @@ router.get('/:id', (req, res) => {
       exclude: ['password']
     },
     where: {
-      id: req.params.id
+      username: req.params.id
     },
     include: [
       {model: Plant,
@@ -87,7 +87,8 @@ router.post("/login", async (req, res) => {
     req.session.save(() => {
       req.session.profile_id = profileData.id;
       req.session.logged_in = true;
-    
+      res.cookie('username', req.body.username);
+      console.log('we were here');
       res.json({
         profile: profileData,
         message: "Welcome back! You're now logged in."

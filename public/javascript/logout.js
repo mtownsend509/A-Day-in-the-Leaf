@@ -1,3 +1,19 @@
+var username = document.cookie.slice(9); 
+console.log('/api/profile/' + username);
+
+var profile_id = ''
+
+const getProfID = async () => {
+    const response = await fetch('/api/profile/' + username);
+    response.json().then((data) => {
+      profile_id = data.id;
+    });
+    return response
+    };
+
+getProfID();
+
+console.log
 
 const logout = async () => {
   const response = await fetch('/api/profile/logout', {
@@ -24,12 +40,22 @@ const singlePlantPage = async (event) => {
       console.log(event.target.id);
       console.log(parseInt(event.target.id));
       if(parseInt(event.target.id)) {
-      document.location.replace('plant/' + event.target.id);
+      document.location.replace('dashboard/plant/' + event.target.id);
+      } else if (event.target.id == 'delete-button') {
+        const response = await fetch(('/api/plant/' + event.target.parentNode.parentNode.parentElement.id), {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+        });
+        if (response.ok) {
+          document.location.replace('/dashboard');
+        } else {
+          console.log('didnt work?');
+        }
       } else {
         console.log('doesnt work');
       }
   } else {
-      console.log('shooooot')
+      console.log('shooooot');
   }
 
 }
@@ -58,7 +84,6 @@ const submitPlant = async (event) => {
   // var plantType = 'flower';
   var waterCurrent = 0;
   var waterFrequency = document.querySelector('#water').value;
-  var profile_id = 2
  
   const newPlant = await fetch('/api/plant', {
     method: 'POST',
@@ -70,11 +95,7 @@ const submitPlant = async (event) => {
   console.log('got here?');
 }
 
-plantWater = () => {
-
-}
-
-plantDelete = () => {
+const plantWater = () => {
 
 }
 
@@ -89,9 +110,6 @@ document.querySelector('#plant-add').addEventListener('click', plantAdd);
 if (document.querySelector('#plant-submit')) {
   document.querySelector('#plant-submit').addEventListener('click', submitPlant);
 }
-if (document.querySelector('fa-solid fa-droplet')) {
-  document.querySelector('fa-solid fa-droplet').addEventListener('click', plantWater)
-}
-if (document.querySelector('fa-solid fa-trash')) {
-  document.querySelector('fa-solid fa-trash').addEventListener('click', plantDelete)
+if (document.querySelector('#water-button')) {
+  document.querySelector('#water-button').addEventListener('click', plantWater)
 }
