@@ -94,4 +94,10 @@ router.get('/addPlant', withAuth, (req, res) => {
       })
 })
 
+router.get('/plantedit', (req, res) => {
+      res.render('plantedit',{
+            loggedIn: req.session.loggedIn
+      })
+})
+
 module.exports = router;
