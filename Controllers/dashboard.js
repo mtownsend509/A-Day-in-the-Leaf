@@ -3,7 +3,7 @@ const router = express.Router();
 const { Plant, Profile } = require("../models");
 const withAuth = require("../utils/auth");
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
       Plant.findAll({
             where: {
                   // use the ID from the session
@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
             const plant = dbPlantData.map(plant => plant.get({ plain: true }));
             res.render('dashboard', {
                   plant,
-                  loggedIn: req.session.loggedIn
+                  loggedIn: true
                 });
       })
       .catch(err => {
@@ -44,7 +44,7 @@ router.get('/', (req, res) => {
 })
 
 
-router.get('/plant/:id', (req, res) => {
+router.get('/plant/:id', withAuth, (req, res) => {
       Plant.findOne({
             where: {
                   id: req.params.id
@@ -78,7 +78,7 @@ router.get('/plant/:id', (req, res) => {
             const plant = dbPlantData.get({ plain: true });
             res.render('plant', {
                   plant,
-                  loggedIn: req.session.loggedIn
+                  loggedIn: true
                 });
       })
       .catch(err => {
@@ -87,9 +87,10 @@ router.get('/plant/:id', (req, res) => {
       })
 })
 
-router.get('/addPlant', (req, res) => {
-      res.render('Plantadd',{
-            loggedIn: req.session.loggedIn
+router.get('/addPlant', withAuth, (req, res) => {
+      res.render('Plantadd', {
+            // loggedIn: req.session.loggedIn
+            loggedIn: true
       })
 })
 
