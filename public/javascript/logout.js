@@ -24,7 +24,7 @@ const singlePlantPage = async (event) => {
       console.log(event.target.id);
       console.log(parseInt(event.target.id));
       if(parseInt(event.target.id)) {
-      document.location.replace('dashboard/plant/' + event.target.id);
+      document.location.replace('plant/' + event.target.id);
       } else {
         console.log('doesnt work');
       }
