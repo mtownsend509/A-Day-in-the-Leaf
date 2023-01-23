@@ -107,6 +107,7 @@ const withAuth = require('../../utils/auth');
         'height',
         'stage',
         'waterNeeds',
+        'waterCurrent',
         'watered',
         'sunshineNeeds',
         'generalNotes'
@@ -217,6 +218,7 @@ router.put('/:id', (req, res) => {
     height: req.body.height,
     stage: req.body.stage,
     waterNeeds: req.body.waterNeeds,
+    waterCurrent: req.body.waterCurrent,
     watered: req.body.watered,
     sunshineNeeds: req.body.sunshineNeeds,
     generalNotes: req.body.generalNotes,

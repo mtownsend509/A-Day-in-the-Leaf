@@ -42,6 +42,8 @@ const singlePlantPage = async (event) => {
       if(parseInt(event.target.id)) {
       document.location.replace('dashboard/plant/' + event.target.id);
       } else if (event.target.id == 'delete-button') {
+        const confirm = window.confirm('Are you sure you want to delete this plant?');
+        if (confirm == true) {
         const response = await fetch(('/api/plant/' + event.target.parentNode.parentNode.parentElement.id), {
           method: 'DELETE',
           headers: { 'Content-Type': 'application/json' },
@@ -50,7 +52,16 @@ const singlePlantPage = async (event) => {
           document.location.replace('/dashboard');
         } else {
           console.log('didnt work?');
-        }
+        }};
+      } else if (event.target.id == 'water-button') {
+          const response = await fetch (('/api/plant/' + event.target.parentNode.parentNode.parentElement.id), {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ waterCurrent: 0, watered: true})
+          })
+          if (response.ok) {
+            window.alert('your plant has been watered!');
+          }
       } else {
         console.log('doesnt work');
       }
@@ -92,6 +103,7 @@ const submitPlant = async (event) => {
   generalNotes, profile_id}),
     headers: {'Content-Type': 'application/json'},
   })
+  document.location.replace('/dashboard');
   console.log('got here?');
 }
 
