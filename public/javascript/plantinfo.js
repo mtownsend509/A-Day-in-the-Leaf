@@ -1,5 +1,9 @@
 
-let plantType = {whatevertheinputvariableis}
+const { Plant } = require("../../models");
+
+let plantType = Plant.species
+
+console.log(chalk.bgHex('#2c2e28').white(plantType))
 
 switch(plantType) {
       case "houseplant": houseplantImage();
@@ -19,6 +23,7 @@ switch(plantType) {
 }
 
 const houseplantImage = () => {
+      console.log(chalk.bgHex('#2c2e28').white(plantType))
       var plantspanEL = document.getElementsByClassName("plantSpan");
       // $(".plantSpan").addClass("plantSpan bg-[#284c20] text-[#eae3ba]");
       plantspanEL.addClass("bg-[#56a554]")
