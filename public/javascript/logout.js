@@ -45,7 +45,7 @@ const logout = async () => {
 };
 
 const home = () => {
-    document.location.replace('/');
+    document.location.replace('/dashboard');
 };
 
 const singlePlantPage = async (event) => {
