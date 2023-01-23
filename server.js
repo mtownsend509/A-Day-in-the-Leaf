@@ -5,9 +5,11 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./Controllers');
 const helpers = require('./utils/helpers');
-
+var CronJob = require('cron').CronJob;
+const { Plant } = require('./Models/index');
 
 const sequelize = require('./config/connection');
+const Op = require('sequelize').Op;
 const { put } = require('./Controllers');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -60,4 +62,28 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(chalk.bgHex('#2c2e28').white(`Now listening at port ${PORT}`)));
 });
+
+
+console.log(Op)
+var test = new CronJob(
+	'* 59 23 * * *',
+	async function() {
+   const plantUpdate = await Plant.update(
+    {
+      waterCurrent: sequelize.literal('water_Current + 1'),
+    },
+    {
+      where: {
+        id: {[Op.like]:'%'}
+      }
+    }
+   )
+   console.log('did the thing!');
+	},
+	null,
+	true,
+	'America/Los_Angeles'
+);
+
+test;
 
