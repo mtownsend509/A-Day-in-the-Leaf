@@ -29,6 +29,12 @@ const signUP = () => {
     document.location.replace('/signup');
 }
 
+const contactPage = () => {
+document.location.replace('/contact');
+}
+
+document.querySelector('#contact-button').addEventListener('click', contactPage);
+
 document.querySelector("#login_submit").addEventListener('click', logIn);
 document.querySelector('#home-button').addEventListener('click', home);
 document.querySelector('#signup-button').addEventListener('click', signUP);

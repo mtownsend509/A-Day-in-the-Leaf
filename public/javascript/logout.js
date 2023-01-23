@@ -173,6 +173,11 @@ const editPage = () => {
   document.location.replace('/dashboard/plantedit');
 }
 
+const contactPage = () => {
+  document.location.replace('/contact');
+}
+
+document.querySelector('#contact-button').addEventListener('click', contactPage);
 document.querySelector('#logout-button').addEventListener('click', logout);
 document.querySelector('#home-button').addEventListener('click', home);
 if (document.querySelector('#plants-container')) {
@@ -190,3 +195,8 @@ if (document.querySelector('#water-button')) {
 if (document.querySelector('#edit-button')) {
   document.querySelector('#edit-button').addEventListener('click', editPage)
 }
+
+if (document.querySelector('#contact-button')) {
+  document.querySelector('#contact-button').addEventListener('click', contactPage)
+}
+
