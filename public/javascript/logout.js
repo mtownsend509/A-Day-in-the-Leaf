@@ -94,22 +94,67 @@ const submitPlant = async (event) => {
   event.preventDefault()
 
   var name = document.querySelector('#name').value;
+  if (!name) {
+    alert("Please fill out the name field");
+    return false;
+  }
   var species = document.querySelector('#species').value;
+  if (!species) {
+    alert("Please fill out the species field");
+    return false;
+  }
   var scientificName = document.querySelector('#scientific-name').value;
+  if (!scientificName) {
+    alert("Please fill out the scientific name field");
+    return false;
+  }
   var adoptionDate = document.querySelector('#adoption-date').value;
+  if (!adoptionDate) {
+    alert("Please fill out the adoption date field");
+    return false;
+  }
   var height = parseInt(document.querySelector('#height').value);
+  if (!height) {
+    alert("Please fill out the height field");
+    return false;
+  }
+  var waterNeeds = document.querySelector('#water').value;
+  if (!waterNeeds) {
+    alert("Please fill out the water frequency field");
+    return false;
+  }
+  var sunshineNeeds = document.querySelector('#sunshine-needs').value;
+  if (!sunshineNeeds) {
+    alert("Please fill out the sun requirement field");
+    return false;
+  }
   //this next stuff is complicated but needs to be this way since we
   //are letting the user select from options
+  var plantType = document.querySelector('#plant-type').value;
+  if (!plantType) {
+    alert("Please select the plant type");
+    return false;
+  }
   var stage = document.querySelector('#stage').value;
+  if (!stage) {
+    alert("Please select the plant's stage");
+    return false;
+  }
   // var stage = 'mature'
-  var waterNeeds = document.querySelector('#water').value;
   var watered = true;
   var generalNotes = document.querySelector('#general-notes').value;
-  var sunshineNeeds = document.querySelector('#sunshine-needs').value;
-  var plantType = document.querySelector('#plant-type').value;
+  if (!generalNotes) {
+    alert("Please add some notes about your plant. If you don't have any please enter 'none'. You may go back and edit these later");
+    return false;
+  }
+
   // var plantType = 'flower';
   var waterCurrent = 0;
   var waterFrequency = document.querySelector('#water').value;
+  if (!waterFrequency) {
+    alert("Please fill out the water frequency field");
+    return false;
+  }
  
   const newPlant = await fetch('/api/plant', {
     method: 'POST',
