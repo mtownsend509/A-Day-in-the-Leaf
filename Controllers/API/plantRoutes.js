@@ -145,6 +145,8 @@ router.get('/:id', async (req, res) => {
       'stage',
       'waterNeeds',
       'watered',
+      'waterCurrent',
+      'waterMax',
       'sunshineNeeds',
       'generalNotes'
     ],

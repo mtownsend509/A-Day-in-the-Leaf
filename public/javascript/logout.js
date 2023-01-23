@@ -13,7 +13,22 @@ const getProfID = async () => {
 
 getProfID();
 
-console.log
+plantCardContainer = document.querySelector('#plants-container');
+const hydrationCheck = async () => {
+  for (i=0; i<plantCardContainer.children.length; i++) {
+    let thePlant = plantCardContainer.children[i].children[0].children[1].id;
+    const plantData = await (await fetch('/api/plant/' + thePlant)).json();
+    console.log(plantData)
+    if (plantData.waterCurrent >= plantData.waterMax) {
+      const plantUpdate = await fetch('/api/plant/' + thePlant, {
+        method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ watered: false })
+      })
+    }
+  }
+};
+hydrationCheck();
 
 const logout = async () => {
   const response = await fetch('/api/profile/logout', {
