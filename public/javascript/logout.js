@@ -28,7 +28,9 @@ const hydrationCheck = async () => {
     }
   }
 };
+if (plantCardContainer) {
 hydrationCheck();
+}
 
 const logout = async () => {
   const response = await fetch('/api/profile/logout', {
@@ -167,8 +169,8 @@ const submitPlant = async (event) => {
   console.log('got here?');
 }
 
-const plantWater = () => {
-
+const editPage = () => {
+  document.location.replace('/dashboard/plantedit');
 }
 
 document.querySelector('#logout-button').addEventListener('click', logout);
@@ -184,4 +186,7 @@ if (document.querySelector('#plant-submit')) {
 }
 if (document.querySelector('#water-button')) {
   document.querySelector('#water-button').addEventListener('click', plantWater)
+}
+if (document.querySelector('#edit-button')) {
+  document.querySelector('#edit-button').addEventListener('click', editPage)
 }
