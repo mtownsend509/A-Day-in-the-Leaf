@@ -1,8 +1,8 @@
 
-html {
-      background-image: url(../../images/doodle.png);
+.html {
+      background-image: url(../assets/doodle.png);
       font-family: serif;
-      /* background-color: #eae3ba; */
+      background-color: #C4CEB4;
 }
 
 /* #plantimage {
@@ -20,4 +20,10 @@ html {
 
 .hide {
     display: none;
+}
+
+.graveyardimage {
+    background-image: url(../assets/deadtrees.png);
+    font-family: serif;
+    background-color: #8c9281;
 }
