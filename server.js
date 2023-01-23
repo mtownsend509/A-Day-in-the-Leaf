@@ -63,8 +63,6 @@ sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(chalk.bgHex('#2c2e28').white(`Now listening at port ${PORT}`)));
 });
 
-
-console.log(Op)
 var test = new CronJob(
 	'* 59 23 * * *',
 	async function() {
