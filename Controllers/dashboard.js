@@ -5,6 +5,10 @@ const withAuth = require("../utils/auth");
 
 router.get('/', (req, res) => {
       Plant.findAll({
+            where: {
+                  // use the ID from the session
+                  profile_id: req.session.profile_id
+            },
             attributes: [
                   'id',
                   'name',
