@@ -3,6 +3,20 @@ const router = express.Router();
 const { Profile, Plant } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Route to display static src images
+// app.get("/static", (req, res) => {
+//   res.render("static");
+// });
+
+// // Route to display dynamic src images
+// app.get("/plant", (req, res) => {
+//   imageList = [];
+//   imageList.push({ src: "./doodle.png", name: "doodle" });
+//   imageList.push({ src: "./hangingplant.png", name: "logo" });
+//   // imageList.push({ src: "icons/react.png", name: "react" });
+//   res.render("dynamic", { imageList: imageList });
+// });
+
 // //auth verifies logged in before executing==========================================================================
 // router.post('/', async (req, res) => {
 //     try {
@@ -179,7 +193,9 @@ router.post('/', (req, res) => {
         waterNeeds: req.body.waterNeeds,
         watered: req.body.watered,
         sunshineNeeds: req.body.sunshineNeeds,
-
+        plantType: req.body.plantType,
+        waterCurrent: 0,
+        waterMax: req.body.waterMax,
         generalNotes: req.body.generalNotes,
         profile_id: req.body.profile_id
         // ...req.body,
