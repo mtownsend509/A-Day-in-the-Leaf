@@ -27,6 +27,11 @@ html {
       --lighter-forest: #515e4e;
       --cool-brown: #4a3029;
       --lavendar: #8a7694;
+      --light-gray: #c1c1c1;
 
 }
 
+.graveyardpage {
+      background-color: #8c9281;
+      background-image: url(../images/deadtrees.png);
+}
