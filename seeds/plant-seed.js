@@ -51,7 +51,7 @@ const plants = [
         waterNeeds: 'Mid Weekly',
         watered: true,
         sunshineNeeds: 'Full sun',
-        plantType: 'yes',
+        plantType: 'flowering',
         waterCurrent: 8,
         waterMax: 7,
         // humidityNeeds: 'yes',
