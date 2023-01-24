@@ -78,6 +78,7 @@ const singlePlantPage = async (event) => {
           })
           if (response.ok) {
             window.alert('your plant has been watered!');
+            location.reload();
           }
       } else {
         console.log('doesnt work');
