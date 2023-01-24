@@ -17,6 +17,7 @@ router.get('/', withAuth, (req, res) => {
                   'adoptionDate',
                   'height',
                   'stage',
+                  'plantType',
                   'waterNeeds',
                   'watered',
                   'sunshineNeeds',
@@ -32,6 +33,7 @@ router.get('/', withAuth, (req, res) => {
       .then(dbPlantData => {
 
             const plant = dbPlantData.map(plant => plant.get({ plain: true }));
+            console.log("this is the plant:", plant);
             res.render('dashboard', {
                   plant,
                   loggedIn: true
@@ -57,6 +59,7 @@ router.get('/plant/:id', withAuth, (req, res) => {
                   'adoptionDate',
                   'height',
                   'stage',
+                  'plantType',
                   'waterNeeds',
                   'watered',
                   'sunshineNeeds',
