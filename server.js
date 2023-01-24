@@ -64,7 +64,7 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 var test = new CronJob(
-	'* 59 23 * * *',
+	'* * * * *',
 	async function() {
    const plantUpdate = await Plant.update(
     {
