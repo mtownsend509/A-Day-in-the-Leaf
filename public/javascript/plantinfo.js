@@ -1,5 +1,5 @@
 
-const { Plant } = require("../../models");
+const { Plant } = require("../../Models");
 
 let plantType = Plant.species
 

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Profile, Plant } = require('../../models');
+const { Profile, Plant } = require('../../Models');
 const withAuth = require('../../utils/auth');
 
 // Route to display static src images
