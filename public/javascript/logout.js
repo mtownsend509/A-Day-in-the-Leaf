@@ -56,8 +56,16 @@ const singlePlantPage = async (event) => {
       if(parseInt(event.target.id)) {
       document.location.replace('dashboard/plant/' + event.target.id);
       } else if (event.target.id == 'delete-button') {
+        var species = event.target.parentNode.parentNode.parentNode.children[0].children[0].innerHTML.trim();
+        var name = event.target.parentNode.parentNode.parentNode.parentNode.children[1].innerHTML.trim();
+        console.log({name, species, profile_id})
         const confirm = window.confirm('Are you sure you want to delete this plant?');
         if (confirm == true) {
+        const deadPlant = await fetch(('/api/graveyard'), {
+          method: 'POST',
+          body: JSON.stringify({name ,species, profile_id}),
+          headers: { 'Content-Type': 'application/json' },
+        })
         const response = await fetch(('/api/plant/' + event.target.parentNode.parentNode.parentElement.id), {
           method: 'DELETE',
           headers: { 'Content-Type': 'application/json' },
