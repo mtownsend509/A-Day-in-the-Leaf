@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Plant, Profile } = require("../Models");
+const { Plant, Profile, Graveyard } = require("../Models");
 const withAuth = require("../Utils/Auth");
 
 router.get('/', withAuth, (req, res) => {
@@ -98,11 +98,44 @@ router.get('/addPlant', withAuth, (req, res) => {
 })
 
 router.get('/graves', withAuth, (req, res) => {
-      res.render('graveyard', {
-            // loggedIn: req.session.loggedIn
-            loggedIn: true
+      Graveyard.findAll({
+            where: {
+                  // use the ID from the session
+                  profile_id: req.session.profile_id
+            },
+            attributes: [
+                  'id',
+                  'name',
+                  'species'
+            ],
+            include: [
+                  {
+                      model: Profile,
+                      attributes: ['username', 'id']
+                  },
+            ],
       })
-  })
+      .then(dbGraveyardData => {
+
+            const graveyard = dbGraveyardData.map(graveyard => graveyard.get({ plain: true }));
+            console.log("this is the plant:", graveyard);
+            res.render('graveyard', {
+                  graveyard,
+                  loggedIn: true
+                });
+      })
+      .catch(err => {
+            console.log(err);
+            res.status(500).json(err)
+      })
+})
+
+// router.get('/graves', withAuth, (req, res) => {
+//       res.render('graveyard', {
+//             // loggedIn: req.session.loggedIn
+//             loggedIn: true
+//       })
+//   })
 
 router.get('/plantedit', (req, res) => {
       res.render('plantedit',{

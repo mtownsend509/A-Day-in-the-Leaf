@@ -33,7 +33,7 @@
                               {{#each graveyard as |graveyard|}}
                               <div class="wrapper bg-transparent antialiased text-gray-900 w-full sm:w-1/2 md:w-1/2 xl:w-1/4 m-10">
                                     <div>
-                                          <img src="/tombstone.png" alt="plant image" class="w-full object-cover object-center rounded-lg shadow-md" id="planticon">
+                                          <img src="/tombstone.png" alt="plant image" class="w-full object-cover object-center rounded-lg" id="planticon">
                                           <div id={{graveyard.id}} class="relative px-4 -mt-16">
                                                 <div id={{graveyard.id}} class="bg-[#c1c1c1] p-6 rounded-lg shadow-lg">
                                                       <div id={{graveyard.id}} class="flex justify-center pb-2">
@@ -44,7 +44,7 @@
                                                                   </span>
                                                             </div>
                                                       </div>
-                                                      <h4 id={{graveyard.id}} class="mt-1 text-xl font-semibold uppercase leading-tight truncate">
+                                                      <h4 id={{graveyard.id}} class="mt-1 text-xl font-semibold flex justify-center uppercase leading-tight truncate">
                                                             {{graveyard.name}}
                                                       </h4>
                                                       {{!-- <div id={{graveyard.id}} class="mt-1">
@@ -52,12 +52,12 @@
                                                             <span id={{graveyard.id}} class="text-gray-600 text-sm">
                                                                   {{plant.generalNotes}}
                                                             </span> --}}
-                                                      </div>
+                                                      {{!-- </div> --}}
                                                 </div>
                                           </div>
                                     </div>
                               </div>
-                        {{/each}}
+                              {{/each}}
                         </div>
                   </div>
             </div>
