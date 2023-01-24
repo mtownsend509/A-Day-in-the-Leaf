@@ -219,6 +219,7 @@ router.put('/:id', (req, res) => {
     adoptionDate: req.body.adoptionDate,
     height: req.body.height,
     stage: req.body.stage,
+    type: req.body.plantType,
     waterNeeds: req.body.waterNeeds,
     waterCurrent: req.body.waterCurrent,
     watered: req.body.watered,

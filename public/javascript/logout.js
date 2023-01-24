@@ -158,7 +158,7 @@ const submitPlant = async (event) => {
     return false;
   }
  
-  const newPlant = await fetch('/api/plant', {
+const newPlant = await fetch('/api/plant', {
     method: 'POST',
     body: JSON.stringify({name, species, scientificName, adoptionDate, height,
     stage, waterNeeds, watered, sunshineNeeds, plantType, waterCurrent, waterFrequency,
@@ -169,8 +169,28 @@ const submitPlant = async (event) => {
   console.log('got here?');
 }
 
-const editPage = () => {
-  document.location.replace('/dashboard/plantedit');
+const editPage = async (event) => {
+  if (event.target.class="absolute bottom-2 right-2 text-2xl") {
+    console.log(event.target.id);
+    console.log(parseInt(event.target.id));
+    const response = await fetch (('/api/plant/' + event.target.id), {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({name, species, scientificName, adoptionDate, height,
+        stage, waterNeeds, watered, sunshineNeeds, plantType, waterCurrent, waterFrequency,
+      generalNotes, profile_id})
+    })
+    if (response.ok) {
+      window.alert('your plant has been watered!');
+    } else {
+      console.log('doesnt work');
+    }
+
+    document.location.replace('dashboard/plant/' + event.target.id + 'plantedit');
+  } else {
+    console.log(sos)
+  }
+
 }
 
 const contactPage = () => {

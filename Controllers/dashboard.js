@@ -97,9 +97,47 @@ router.get('/addPlant', withAuth, (req, res) => {
       })
 })
 
-router.get('/plantedit', (req, res) => {
-      res.render('plantedit',{
-            loggedIn: req.session.loggedIn
+router.get('/plant/:id/plantedit', (req, res) => {
+      Plant.findOne({
+            where: {
+                  id: req.params.id
+            },
+            attributes: [
+                  'id',
+                  'name',
+                  'species',
+                  'scientificName',
+                  'adoptionDate',
+                  'height',
+                  'stage',
+                  'plantType',
+                  'waterNeeds',
+                  'watered',
+                  'sunshineNeeds',
+                  'generalNotes'
+            ],
+            include: [
+                  {
+                      model: Profile,
+                      attributes: ['username', 'id']
+                  },
+            ],
+      })
+      .then(dbPlantData => {
+            if (!dbPlantData) {
+                  res.status(404).json({ message: 'No plant found with this id' });
+                  return;
+            }
+
+            const plant = dbPlantData.get({ plain: true });
+            res.render('plantedit', {
+                  plant,
+                  loggedIn: true
+                });
+      })
+      .catch(err => {
+            console.log(err);
+            res.status(500).json(err)
       })
 })
 
