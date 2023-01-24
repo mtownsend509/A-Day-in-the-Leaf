@@ -212,7 +212,13 @@ router.post('/', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  Plant.update({
+  Plant.update(
+    {
+      where: {
+      id: req.params.id
+      }
+    },
+    {
     name: req.body.name,
     species: req.body.species,
     scientificName: req.body.scientificName,
@@ -225,11 +231,6 @@ router.put('/:id', (req, res) => {
     watered: req.body.watered,
     sunshineNeeds: req.body.sunshineNeeds,
     generalNotes: req.body.generalNotes,
-  },
-  {
-    where: {
-    id: req.params.id
-    }
   })
   .then(dbPlantData => res.json(dbPlantData))
   .catch(err => {
