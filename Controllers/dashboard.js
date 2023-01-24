@@ -60,7 +60,7 @@ router.get('/plant/:id', withAuth, (req, res) => {
                   'height',
                   'stage',
                   'plantType',
-                  'waterNeeds',
+                  'waterMax',
                   'watered',
                   'sunshineNeeds',
                   'generalNotes'
