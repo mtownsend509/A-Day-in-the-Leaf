@@ -33,7 +33,9 @@ const contactPage = () => {
 document.location.replace('/contact');
 }
 
+if (document.querySelector('#contact-button')) {
 document.querySelector('#contact-button').addEventListener('click', contactPage);
+}
 
 document.querySelector("#login_submit").addEventListener('click', logIn);
 document.querySelector('#home-button').addEventListener('click', home);

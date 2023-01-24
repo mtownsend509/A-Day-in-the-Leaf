@@ -177,7 +177,9 @@ const contactPage = () => {
   document.location.replace('/contact');
 }
 
-document.querySelector('#contact-button').addEventListener('click', contactPage);
+if (document.querySelector('#contact-button')) {
+  document.querySelector('#contact-button').addEventListener('click', contactPage);
+}
 document.querySelector('#logout-button').addEventListener('click', logout);
 if (document.querySelector('#dashboard-button')) {
 document.querySelector('#dashboard-button').addEventListener('click', home);
@@ -191,9 +193,9 @@ document.querySelector('#plant-add').addEventListener('click', plantAdd);
 if (document.querySelector('#plant-submit')) {
   document.querySelector('#plant-submit').addEventListener('click', submitPlant);
 }
-if (document.querySelector('#water-button')) {
-  document.querySelector('#water-button').addEventListener('click', plantWater)
-}
+// if (document.querySelector('#water-button')) {
+//   document.querySelector('#water-button').addEventListener('click', plantWater)
+// }
 if (document.querySelector('#edit-button')) {
   document.querySelector('#edit-button').addEventListener('click', editPage)
 }
