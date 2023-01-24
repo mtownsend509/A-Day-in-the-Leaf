@@ -34,6 +34,12 @@ const logIN = () => {
     document.location.replace('/login');
 };
 
+const contactPage = () => {
+document.location.replace('/contact');
+}
+
+document.querySelector('#contact-button').addEventListener('click', contactPage);
+
 document.querySelector("#signup_submit").addEventListener('click', signUp);
 document.querySelector("#home-button").addEventListener('click', home);
 document.querySelector("#login-button").addEventListener('click', logIN);

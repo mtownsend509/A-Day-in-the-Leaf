@@ -1,8 +1,8 @@
 
-html {
+.html {
       background-image: url(../assets/doodle.png);
       font-family: serif;
-      /* background-color: #eae3ba; */
+      background-color: #C4CEB4;
 }
 
 /* #plantimage {
@@ -20,4 +20,26 @@ html {
 
 .hide {
     display: none;
+}
+
+.graveyardimage {
+    background-image: url(../assets/deadtrees.png);
+    font-family: serif;
+    background-color: #8c9281;
+}
+
+/* media queries largely done in tailwind */
+/* Large smartphones*/
+@media screen and (max-width: 768px) {
+    .plantimage {
+            display:none;
+    }
+
+}
+    
+/* Small smartphones */
+@media screen and (max-width: 576px) {
+    .plantimage {
+        display:none;
+    }
 }

@@ -100,4 +100,10 @@ router.get('/plantedit', (req, res) => {
       })
 })
 
+router.get('/graveyard', (req, res) => {
+      res.render('graveyard',{
+            loggedIn: req.session.loggedIn
+      })
+})
+
 module.exports = router;
