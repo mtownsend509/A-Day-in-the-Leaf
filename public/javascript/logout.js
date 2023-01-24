@@ -61,9 +61,6 @@ const home = () => {
 const singlePlantPage = async (event) => {
   console.log('card container works')
   if (event.target.class = "relative px-4 -mt-16") {
-      console.log('clicked a plant');
-      console.log(event.target.id);
-      console.log(parseInt(event.target.id));
       if(parseInt(event.target.id)) {
       document.location.replace('dashboard/plant/' + event.target.id);
       } else if (event.target.id == 'delete-button') {
@@ -129,8 +126,8 @@ const submitPlant = async (event) => {
     alert("Please fill out the height field");
     return false;
   }
-  var waterNeeds = document.querySelector('#water').value;
-  if (!waterNeeds) {
+  var waterMax = document.querySelector('#water').value;
+  if (!waterMax) {
     alert("Please fill out the water frequency field");
     return false;
   }
@@ -170,7 +167,7 @@ const submitPlant = async (event) => {
   const newPlant = await fetch('/api/plant', {
     method: 'POST',
     body: JSON.stringify({name, species, scientificName, adoptionDate, height,
-    stage, waterNeeds, watered, sunshineNeeds, plantType, waterCurrent, waterFrequency,
+    stage, waterMax, watered, sunshineNeeds, plantType, waterCurrent, waterFrequency,
   generalNotes, profile_id}),
     headers: {'Content-Type': 'application/json'},
   })
