@@ -8,7 +8,7 @@ const helpers = require('./Utils/Helpers');
 var CronJob = require('cron').CronJob;
 const { Plant } = require('./Models/index');
 
-const sequelize = require('./Config/Connection');
+const sequelize = require('./config/Connection');
 const Op = require('sequelize').Op;
 const { put } = require('./Controllers');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);

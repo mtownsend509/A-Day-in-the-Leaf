@@ -5,7 +5,7 @@ const seedProfiles = require('./profile-seed');
 const { Plant } = require('../Models');
 const { Profile } = require('../Models');
 
-const sequelize = require('../Config/Connection');
+const sequelize = require('../config/Connection');
 
 const seedTables = async () => {
     await sequelize.sync({force: true});
