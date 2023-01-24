@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { Plant, Profile } = require("../models");
-const withAuth = require("../utils/auth");
+const { Plant, Profile } = require("../Models");
+const withAuth = require("../Utils/Auth");
 
 router.get("/", async (req, res) => {
   try {
