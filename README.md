@@ -1,6 +1,12 @@
-# A Day in the Leaf
+![A day in the leaf](./images/Illustration4.png)
 
- An app to track your plant’s watering schedule, light exposure, growth, and health issues, with an option to create your own tracking category.
+
+<p align="center">
+    <a href="https://github.com/mtownsend509/A-Day-in-the-Leaf/tree/main">Report Bug</a>
+    ·
+    <a href="https://github.com/mtownsend509/A-Day-in-the-Leaf/tree/main">Request A Change</a>
+  </p>
+</div>
 
 [![License: MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -17,7 +23,7 @@ This project allowed four contributors to in turn test the pair programming mode
 - What problem does it solve?
 - What did you learn? -->
 
-## Table of Contents (Optional)
+## Table of Contents
 
 <!-- If your README is long, add a table of contents to make it easy for users to find what they need. -->
 
@@ -27,7 +33,7 @@ This project allowed four contributors to in turn test the pair programming mode
 - [License](#license)
 - [Badges](#badges)
 - [Features](#features)
-- [Tests](#tests)
+- [Questions](#questions)
 
 
 
@@ -35,10 +41,18 @@ This project allowed four contributors to in turn test the pair programming mode
 
 <!-- TODO: update link
 TODO: beef up -->
-
+### Visit The Deployed Application
 Follow this [link]() to visit the app and create an account by entering a username and password at the main page. Once you're logged in, you can add new plants and the associated information information. Once added, you can track their watering, growth, care, etc.
 
+### How to Install Locally
 <!-- What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running. -->
+1. From the GitHub repository, copy code from the <> Code button
+2. Clone locally using CLI or VSCode terminal
+3. Ensure all necessary technology is installed (mySQL, Node.js)
+4. Install dependancies using NPM i
+5. Be sure to run Schema.sql through mySQL and start the server before testing
+6. Run application in your browser locally using "http://localhost:3001/"
+5. Play as you'd like!
 
 ## Usage
 
@@ -78,6 +92,9 @@ There are 8 main sections of this repository:
 
 - [ReadMe](https://github.com/mtownsend509/A-Day-in-the-Leaf/blob/Develope/LICENSE) - This file containing an executive overview of the project
 
+### To Use The Deployed Application
+This application uses common website workflow. You will need to log in or sign up before doing anything else. Once logged in you will see an empty dashboard, that's okay! Press the "add plant" button to add your first plant to your dashboard. In the add plant page you will need to add various information about your houseplant's care needs and any other care information you'd like to add. Once you're done press the submit button at the bottom of the page, and your new plant should be populated on your dashboard. Add more if you'd like, or use this plant to help you keep track of it's needs and care using the water button.
+
 <!-- Provide instructions and examples for use. Include screenshots as needed.
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
@@ -94,13 +111,13 @@ This webpage was built using UW Trilogy Bootcamp class materials as references.
 
 There are four contributors to this project. Each member along with their contributions are listed below.
 
-- Zach Beiser:
+- Zach Beiser: Handlebars, debugging routes, Public JS, User Story, README, wireframing  
 
-- Katrina Baker:
+- Katrina Baker: Routes, handlebars, presentation, image sourcing, logo design, debugging
 
-- Abigail Doyle:
+- Abigail Doyle: HTML, Tailwind Styling, Debugging, Handlebars, models, navigation and functionality for handlebars
 
-- Matthew Townsend:
+- Matthew Townsend: DB schema,  Public JS, Seeds, models, Debugging, CronJob, plant graveyard, functionality and navigation
 
 ## License
 
