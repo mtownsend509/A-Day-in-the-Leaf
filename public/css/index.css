@@ -27,3 +27,19 @@
     font-family: serif;
     background-color: #8c9281;
 }
+
+/* media queries largely done in tailwind */
+/* Large smartphones*/
+@media screen and (max-width: 768px) {
+    .plantimage {
+            display:none;
+    }
+
+}
+    
+/* Small smartphones */
+@media screen and (max-width: 576px) {
+    .plantimage {
+        display:none;
+    }
+}

@@ -2,36 +2,18 @@
       <div class="container flex flex-wrap items-center justify-between mx-auto">
             <a href="/" class="flex items-center">
                   <img src="/hangingPlant.png" class="h-[5rem] sm:h-[5rem]" alt="Logo" />
-                  <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-[#C4CEB4]">A Day in the
-                        Leaf</span>
+                  <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-[#C4CEB4]">A Day in the Leaf</span>
             </a>
-            <button data-collapse-toggle="navbar-default" type="button"
-                  class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-[#2c2e28] focus:outline-none focus:ring-2 focus:ring-gray-200"
-                  aria-controls="navbar-default" aria-expanded="false">
-                  <span class="sr-only">Open main menu</span>
-                  <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                              clip-rule="evenodd"></path>
-                  </svg>
-            </button>
-            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                  <ul
-                        class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-[#2c2e28] md:flex-row md:space-x-8 md:mt-0 md:text-md md:font-medium md:border-0 md:bg-[#2c2e28]">
+            <div class="w-full md:block md:w-auto" id="navbar-default">
+                  <ul class="flex flex-row justify-end p-4 mt-4 border border-gray-100 rounded-lg bg-[#2c2e28] space-x-8 mt-0 text-md font-medium border-0">
                         <li>
-                              <a href="#" id="home-button"
-                                    class="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:text-[#C4CEB4] md:p-0"
-                                    aria-current="page">Dashboard</a>
+                              <a href="#" id="home-button" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0" aria-current="page">Dashboard</a>
                         </li>
                         <li>
-                              <a href="#" id="logout-button"
-                                    class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Log
-                                    out</a>
+                              <a href="#" id="logout-button" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Log out</a>
                         </li>
                         <li>
-                              <a href="#" id="contact-button"
-                                    class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Contact</a>
+                              <a href="#" id="contact-button" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Contact</a>
                         </li>
                   </ul>
             </div>
@@ -57,7 +39,7 @@
             </div>
       </div>
 
-      <div class="grid md:grid-cols-2 md:gap-6">
+      <div class="grid lg:grid-cols-2 lg:gap-6">
             {{!-- Species --}}
             <div class="relative z-0 w-full mb-6 group">
                   <input type="text" name="floating_species" id="species"
@@ -114,7 +96,7 @@
                         class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
                         placeholder=" " required />
                   <label for="floating_sunshine_notes"
-                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Please enter notes about Sunshine needs such as: full sun, half sun, full shade.</label>
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Please enter notes about Sunshine needs. Ex: full sun, half sun, full shade.</label>
             </div>
 
             {{!-- Type --}}
@@ -149,7 +131,7 @@
                   class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
                   placeholder=" " required />
             <label for="floating_gen_notes"
-                  class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Any General Notes you'd like to add? Consider adding information regarding plant health, special care, etc.</label>
+                  class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Any notes you'd like to add? Ex: plant health, special care, etc.</label>
       </div>
             {{!-- Submit Button --}}
       <div class="inline-flex items-center relative z-0 w-60 mb-6 group">
