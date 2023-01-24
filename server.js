@@ -4,11 +4,11 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./Controllers');
-const helpers = require('./utils/helpers');
+const helpers = require('./Utils/Helpers');
 var CronJob = require('cron').CronJob;
 const { Plant } = require('./Models/index');
 
-const sequelize = require('./config/connection');
+const sequelize = require('./Config/Connection');
 const Op = require('sequelize').Op;
 const { put } = require('./Controllers');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);

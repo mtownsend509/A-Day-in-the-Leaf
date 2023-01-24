@@ -48,7 +48,7 @@ There are 8 main sections of this repository:
 
 - [Controllers Folder](https://github.com/mtownsend509/A-Day-in-the-Leaf/tree/Develope/Controllers) -  Contains JS route functions for homepage, dashboard, signup, login, logout, and plant groups, including GET, POST, PUT, and DELETE routes
 
-- [Config Folder](https://github.com/mtownsend509/A-Day-in-the-Leaf/tree/Develope/config) - Contains the js file enconding dotenv and sequelize functionality for connecting the database
+- [Config Folder](https://github.com/mtownsend509/A-Day-in-the-Leaf/tree/Develope/Config) - Contains the js file enconding dotenv and sequelize functionality for connecting the database
 
 - [DB Folder](https://github.com/mtownsend509/A-Day-in-the-Leaf/tree/Develope/db) - Contains the schema.sql file used for database creation
 
