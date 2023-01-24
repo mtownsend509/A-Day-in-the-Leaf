@@ -32,6 +32,15 @@ if (plantCardContainer) {
 hydrationCheck();
 }
 
+const graveyardSwitch = document.querySelector('#plantgraveyard');
+const graveyardCheck = async () => {
+  document.getElementById("mainhtml").setAttribute('class', 'graveyardimage')
+}
+if (graveyardSwitch) {
+  graveyardCheck();
+}
+
+
 const logout = async () => {
   const response = await fetch('/api/profile/logout', {
       method: 'POST',
