@@ -32,13 +32,14 @@ if (plantCardContainer) {
 hydrationCheck();
 }
 
-const graveyardPage = document.querySelector('#plantgraveyard');
+const graveyardSwitch = document.querySelector('#plantgraveyard');
 const graveyardCheck = async () => {
   document.getElementById("mainhtml").setAttribute('class', 'graveyardimage')
 }
-if (graveyardPage) {
+if (graveyardSwitch) {
   graveyardCheck();
 }
+
 
 const logout = async () => {
   const response = await fetch('/api/profile/logout', {
@@ -64,8 +65,16 @@ const singlePlantPage = async (event) => {
       if(parseInt(event.target.id)) {
       document.location.replace('dashboard/plant/' + event.target.id);
       } else if (event.target.id == 'delete-button') {
+        var species = event.target.parentNode.parentNode.parentNode.children[0].children[0].innerHTML.trim();
+        var name = event.target.parentNode.parentNode.parentNode.parentNode.children[1].innerHTML.trim();
+        console.log({name, species, profile_id})
         const confirm = window.confirm('Are you sure you want to delete this plant?');
         if (confirm == true) {
+        const deadPlant = await fetch(('/api/graveyard'), {
+          method: 'POST',
+          body: JSON.stringify({name ,species, profile_id}),
+          headers: { 'Content-Type': 'application/json' },
+        })
         const response = await fetch(('/api/plant/' + event.target.parentNode.parentNode.parentElement.id), {
           method: 'DELETE',
           headers: { 'Content-Type': 'application/json' },
@@ -183,6 +192,10 @@ const contactPage = () => {
   document.location.replace('/contact');
 }
 
+const graveyardPage = () => {
+  document.location.replace('/dashboard/graves');
+}
+
 if (document.querySelector('#contact-button')) {
   document.querySelector('#contact-button').addEventListener('click', contactPage);
 }
@@ -208,5 +221,9 @@ if (document.querySelector('#edit-button')) {
 
 if (document.querySelector('#contact-button')) {
   document.querySelector('#contact-button').addEventListener('click', contactPage)
+}
+
+if (document.querySelector('#graveyard-button')) {
+  document.querySelector('#graveyard-button').addEventListener('click', graveyardPage)
 }
 
