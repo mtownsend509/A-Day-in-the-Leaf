@@ -1,0 +1,142 @@
+<nav class="bg-[#2c2e28] py-2 sm:px-4">
+      <div class="container flex flex-wrap items-center justify-between mx-auto">
+            <a href="/" class="flex items-center">
+                  <img src="/hangingPlant.png" class="h-[5rem] sm:h-[5rem]" alt="Logo" />
+                  <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-[#C4CEB4]">A Day in the Leaf</span>
+            </a>
+            <div class="w-full md:block md:w-auto" id="navbar-default">
+                  <ul class="flex flex-row justify-end p-4 mt-4 border border-gray-100 rounded-lg bg-[#2c2e28] space-x-8 mt-0 text-md font-medium border-0">
+                        <li>
+                              <a href="#" id="dashboard-button" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0" aria-current="page">Dashboard</a>
+                        </li>
+                        <li>
+                              <a href="#" id="logout-button" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Log out</a>
+                        </li>
+                  </ul>
+            </div>
+      </div>
+</nav>
+
+<br>
+
+<form class="px-20 bg-[#C4CEB4] py-10 m-20 rounded-lg drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]">
+      <div class="text-xl text-[#2c2e28] font-semibold mb-5">
+            <h2>Add your plant here:</h2>
+      </div>
+
+      {{!-- Name --}}
+      <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="relative z-0 w-full mb-6 group">
+                  <input type="text" name="floating_plant_name" id="name"
+                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
+                        placeholder=" " required />
+                  <label for="floating_plant_name"
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Name
+                        your plant</label>
+            </div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 lg:gap-6">
+            {{!-- Species --}}
+            <div class="relative z-0 w-full mb-6 group">
+                  <input type="text" name="floating_species" id="species"
+                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
+                        placeholder=" " required />
+                  <label for="floating_species"
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Plant Species</label>
+            </div>
+
+            {{!-- Scientific Name --}}
+            <div class="relative z-0 w-full mb-6 group">
+                  <input type="text" name="floating_scientific_name" id="scientific-name"
+                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
+                        placeholder=" " required />
+                  <label for="floating_scientific_name"
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Scientific name</label>
+            </div>
+
+            {{!-- Adoption Date --}}
+            <div class="relative z-0 w-full mb-6 group text-[#2c2e28]">
+                  <input type="text" name="floating_adoption_date" id="adoption-date"
+                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-[#225f69] peer"
+                        placeholder=" " required />
+                  <label for="floating_adoption_date"
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Adoption
+                        Date</label>
+                  {{!-- maybe add today's date using hbs and helper --}}
+                  <p class ="text-xs">(If you don't know the exact adoption date, enter today's date.)</p>
+            </div>
+
+            {{!-- Height --}}
+            <div class="relative z-0 w-full mb-6 group">
+                  <input type="text" name="floating_scientific_name" id="height"
+                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
+                        placeholder=" " required />
+                  <label for="floating_scientific_name"
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Plant height (cm)</label>
+            </div>         
+
+                   {{!-- Watered Cron Job code? --}}    
+           
+            {{!-- Water Needs --}}
+            <div class="relative z-0 w-full mb-6 group">
+                  <input type="text" name="floating_water_notes" id="water"
+                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
+                        placeholder=" " required />
+                  <label for="floating_water_notes"
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">How many days between waterings?</label>
+            </div>
+
+            {{!-- Sunshine Needs --}}
+            <div class="relative z-0 w-full mb-6 group">
+                  <input type="text" name="floating_sunshine_notes" id="sunshine-needs"
+                        class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
+                        placeholder=" " required />
+                  <label for="floating_sunshine_notes"
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Please enter notes about Sunshine needs. Ex: full sun, half sun, full shade.</label>
+            </div>
+
+            {{!-- Type --}}
+            <div class="relative z-0 w-full mb-6 group">
+                  <select id="plant-type" name="bad_day" class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer">
+                        <option value="" disabled selected hidden>What category matches your plant best?</option>
+                        <option value="Flowering">Flowering</option>
+                        <option value="Foliage">Foliage</option>
+                        <option value="Succulent">Succulent</option>
+                        <option value="Palm">Palm</option>
+                        <option value="Tree">Tree</option>
+                        <option value="Other">Other</option>
+                  </select>
+
+            </div> 
+
+            {{!-- Stage --}}
+            <div class="relative z-0 w-full mb-6 group">
+                  <select id = "stage" name="bad_day" class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer">
+                        <option value="" disabled selected hidden>What growth stage matches your plant best?</option>
+                        <option value="Seed">Seed</option>
+                        <option value="Sprout">Sprout</option>
+                        <option value="Sapling">Sapling</option>
+                        <option value="Mature">Mature</option>
+                  </select>
+            </div>  
+      </div>          
+
+            {{!-- General Notes --}}
+      <div class="relative z-0 w-full mb-6 group">
+            <input type="text" name="floating_gen_notes" id="general-notes"
+                  class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
+                  placeholder=" " required />
+            <label for="floating_gen_notes"
+                  class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Any notes you'd like to add? Ex: plant health, special care, etc.</label>
+      </div>
+            {{!-- Submit Button --}}
+      <div class="inline-flex items-center relative z-0 w-60 mb-6 group">
+            <button type="submit" id="plant-submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-[#2c2e28] rounded-lg group bg-gradient-to-br from-[#2c2e28] to-[#284c20] group-hover:from-[#2c2e28] group-hover:to-[#284c20] hover:text-[#C4CEB4] focus:ring-4 focus:outline-none focus:ring-[#284c20]">
+                  <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#C4CEB4] rounded-md group-hover:bg-opacity-0">
+                        <i class="fa-solid fa-plus"></i> Create new plant
+                  </span>
+            </button>
+      </div>
+</form>
+<script src="/javascript/logout.js"></script>

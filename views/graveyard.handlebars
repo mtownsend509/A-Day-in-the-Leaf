@@ -1,0 +1,68 @@
+<nav class="bg-[#2c2e28] py-2 sm:px-4">
+      <div class="container flex flex-wrap items-center justify-between mx-auto">
+            <a href="/" class="flex items-center">
+                  <img src="/hangingPlant.png" class="h-[5rem] sm:h-[5rem]" alt="Logo" />
+                  <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-[#C4CEB4]">A Day in the Leaf</span>
+            </a>
+            <div class="w-full md:block md:w-auto" id="navbar-default">
+                  <ul class="flex flex-row justify-end p-4 mt-4 border border-gray-100 rounded-lg bg-[#2c2e28] space-x-8 mt-0 text-md font-medium border-0">
+                        <li>
+                              <a href="#" id="home-button" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0" aria-current="page">Dashboard</a>
+                        </li>
+                        <li>
+                              <a href="#" id="logout-button" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Log out</a>
+                        </li>
+                  </ul>
+            </div>
+      </div>
+</nav>
+
+<div class="flex flex-row bg-inherit antialiased">
+      <div class="flex flex-col fixed top-[400px]">
+            <a href="https://plant-diseases.uada.edu" class="text-3xl" target="_blank"><i class="fa-solid fa-seedling" title="Plant Disease Image Database"></i></a> 
+            <a href="https://portal.ct.gov/CAES/Fact-Sheets/Plant-Pathology/Plant-Health-Problems" class="text-3xl mb-2" target="_blank"><i class="fa-solid fa-leaf" title="Plant Health Problems"></i></a>
+            <a href="https://www.washingtonpost.com/home/2022/10/12/why-is-my-houseplant-dying/" class="text-3xl mb-2" target="_blank"><i class="fa-solid fa-plant-wilt" title="Common Causes of Death for Houseplants"></i></a> 
+      </div>
+      <div class="bg-inherit md:max-2xl:col-span-6 pl-20 ml-5 flex-wrap">
+            <div class="antialiased bg-inherit text-gray-900 font-sans p-6">
+                  <div class="container mx-auto">
+                        <div id="plants-container" class="flex flex-wrap -mx-4 cardcontainer">
+                              <!-- start cards -->
+                              <!-- single card start -->
+                                    {{!-- not sure if this is correct --}}
+                              {{#each plant as |plant|}}
+                              <div class="wrapper bg-transparent antialiased text-gray-900 w-full sm:w-1/2 md:w-1/2 xl:w-1/4 m-10">
+                                    <div>
+                                          <img src="/tombstone.png" alt="plant image" class="w-full object-cover object-center rounded-lg shadow-md" id="planticon">
+                                          <div id={{plant.id}} class="relative px-4 -mt-16">
+                                                <div id={{plant.id}} class="bg-[#c1c1c1] p-6 rounded-lg shadow-lg">
+                                                      <div id={{plant.id}} class="flex justify-center pb-2">
+                                                            <div id={{plant.id}} class="flex items-baseline">
+                                                                  <span id={{plant.id}} class="plantSpan text-[#eae3ba] text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
+                                                                        {{!-- species instead of type? --}}
+                                                                        Dead {{plant.species}}
+                                                                  </span>
+                                                            </div>
+                                                      </div>
+                                                      <h4 id={{plant.id}} class="mt-1 text-xl font-semibold uppercase leading-tight truncate">
+                                                            {{plant.name}}
+                                                      </h4>
+                                                      <div id={{plant.id}} class="mt-1">
+                                                            Health conerns:
+                                                            <span id={{plant.id}} class="text-gray-600 text-sm">
+                                                                  {{plant.generalNotes}}
+                                                            </span>
+                                                      </div>
+                                                </div>
+                                          </div>
+                                    </div>
+                              </div>
+                        {{/each}}
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
+
+<script src="/javascript/logout.js"></script>
+<script src="/javascript/plantinfo.js"></script>
