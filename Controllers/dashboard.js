@@ -97,16 +97,23 @@ router.get('/addPlant', withAuth, (req, res) => {
       })
 })
 
+router.get('/graves', withAuth, (req, res) => {
+      res.render('graveyard', {
+            // loggedIn: req.session.loggedIn
+            loggedIn: true
+      })
+  })
+
 router.get('/plantedit', (req, res) => {
       res.render('plantedit',{
             loggedIn: req.session.loggedIn
       })
 })
 
-router.get('/graveyard', (req, res) => {
-      res.render('graveyard',{
-            loggedIn: req.session.loggedIn
-      })
-})
+// router.get('/graveyard', (req, res) => {
+//       res.render('graveyard',{
+//             loggedIn: req.session.loggedIn
+//       })
+// })
 
 module.exports = router;

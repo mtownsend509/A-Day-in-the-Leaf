@@ -183,6 +183,10 @@ const contactPage = () => {
   document.location.replace('/contact');
 }
 
+const graveyardPage = () => {
+  document.location.replace('/dashboard/graves');
+}
+
 if (document.querySelector('#contact-button')) {
   document.querySelector('#contact-button').addEventListener('click', contactPage);
 }
@@ -208,5 +212,9 @@ if (document.querySelector('#edit-button')) {
 
 if (document.querySelector('#contact-button')) {
   document.querySelector('#contact-button').addEventListener('click', contactPage)
+}
+
+if (document.querySelector('#graveyard-button')) {
+  document.querySelector('#graveyard-button').addEventListener('click', graveyardPage)
 }
 

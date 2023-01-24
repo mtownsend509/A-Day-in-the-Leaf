@@ -7,7 +7,7 @@
             <div class="w-full md:block md:w-auto" id="navbar-default">
                   <ul class="flex flex-row justify-end p-4 mt-4 border border-gray-100 rounded-lg bg-[#2c2e28] space-x-8 mt-0 text-md font-medium border-0">
                         <li>
-                              <a href="#" id="home-button" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0" aria-current="page">Dashboard</a>
+                              <a href="#" id="dashboard-button" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0" aria-current="page">Dashboard</a>
                         </li>
                         <li>
                               <a href="#" id="logout-button" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Log out</a>
@@ -30,28 +30,28 @@
                               <!-- start cards -->
                               <!-- single card start -->
                                     {{!-- not sure if this is correct --}}
-                              {{#each plant as |plant|}}
+                              {{#each graveyard as |graveyard|}}
                               <div class="wrapper bg-transparent antialiased text-gray-900 w-full sm:w-1/2 md:w-1/2 xl:w-1/4 m-10">
                                     <div>
                                           <img src="/tombstone.png" alt="plant image" class="w-full object-cover object-center rounded-lg shadow-md" id="planticon">
-                                          <div id={{plant.id}} class="relative px-4 -mt-16">
-                                                <div id={{plant.id}} class="bg-[#c1c1c1] p-6 rounded-lg shadow-lg">
-                                                      <div id={{plant.id}} class="flex justify-center pb-2">
-                                                            <div id={{plant.id}} class="flex items-baseline">
-                                                                  <span id={{plant.id}} class="plantSpan text-[#eae3ba] text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
+                                          <div id={{graveyard.id}} class="relative px-4 -mt-16">
+                                                <div id={{graveyard.id}} class="bg-[#c1c1c1] p-6 rounded-lg shadow-lg">
+                                                      <div id={{graveyard.id}} class="flex justify-center pb-2">
+                                                            <div id={{graveyard.id}} class="flex items-baseline">
+                                                                  <span id={{graveyard.id}} class="plantSpan text-[#eae3ba] text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
                                                                         {{!-- species instead of type? --}}
-                                                                        Dead {{plant.species}}
+                                                                        Dead {{graveyard.species}} plant
                                                                   </span>
                                                             </div>
                                                       </div>
-                                                      <h4 id={{plant.id}} class="mt-1 text-xl font-semibold uppercase leading-tight truncate">
-                                                            {{plant.name}}
+                                                      <h4 id={{graveyard.id}} class="mt-1 text-xl font-semibold uppercase leading-tight truncate">
+                                                            {{graveyard.name}}
                                                       </h4>
-                                                      <div id={{plant.id}} class="mt-1">
+                                                      {{!-- <div id={{graveyard.id}} class="mt-1">
                                                             Health conerns:
-                                                            <span id={{plant.id}} class="text-gray-600 text-sm">
+                                                            <span id={{graveyard.id}} class="text-gray-600 text-sm">
                                                                   {{plant.generalNotes}}
-                                                            </span>
+                                                            </span> --}}
                                                       </div>
                                                 </div>
                                           </div>
