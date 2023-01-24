@@ -1,5 +1,6 @@
 const Profile = require('./Profile');
 const Plant = require('./Plant');
+const Graveyard = require('./Graveyard');
 
 Profile.hasMany(Plant, {
   foreignKey: 'profile_id',
@@ -10,4 +11,8 @@ Plant.belongsTo(Profile, {
   foreignKey: 'profile_id'
 });
 
-module.exports = { Profile , Plant };
+Graveyard.belongsTo(Profile, {
+  foreignKey: 'profile_id'
+})
+
+module.exports = { Profile , Plant, Graveyard };

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Profile, Plant } = require('../../Models');
+const { Profile, Plant, Graveyard } = require('../../Models');
 const withAuth = require('../../Utils/Auth');
 
 // Route to display static src images
@@ -236,6 +236,7 @@ router.put('/:id', (req, res) => {
     res.status(500).json(err);
   });
 })
+
 
 
 
