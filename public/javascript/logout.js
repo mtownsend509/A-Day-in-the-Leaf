@@ -179,7 +179,9 @@ const contactPage = () => {
 
 document.querySelector('#contact-button').addEventListener('click', contactPage);
 document.querySelector('#logout-button').addEventListener('click', logout);
-document.querySelector('#home-button').addEventListener('click', home);
+if (document.querySelector('#dashboard-button')) {
+document.querySelector('#dashboard-button').addEventListener('click', home);
+}
 if (document.querySelector('#plants-container')) {
   document.querySelector('#plants-container').addEventListener('click', singlePlantPage)
 }
