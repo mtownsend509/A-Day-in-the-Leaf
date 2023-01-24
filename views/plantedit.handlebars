@@ -19,7 +19,7 @@
 
 <br>
 
-<form class="px-20 bg-[#C4CEB4] py-10 m-20 rounded-lg drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]">
+<form class="px-20 bg-[#C4CEB4] py-10 m-20 rounded-lg drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]" id="editform">
       <div class="text-xl text-[#2c2e28] font-semibold mb-5">
             <h2>Edit your plant here:</h2>
       </div>
@@ -29,26 +29,25 @@
             <div class="relative z-0 w-full mb-6 group">
                   <input type="text" name="floating_plant_name" id="name"
                         class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
-                        placeholder=" " required />
+                        placeholder=" "/>
                   <label for="floating_plant_name"
-                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Name
-                        your plant</label>
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{plant.name}}</label>
             </div>
       </div>
 
       <div class="grid lg:grid-cols-2 lg:gap-6">
             {{!-- Species --}}
             <div class="relative z-0 w-full mb-6 group">
-                  <input type="text" name="floating_species" id="species"
+                  <input type="text" name="floating_species" id="edit-species"
                         class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
-                        placeholder=" " required />
+                        placeholder=" "/>
                   <label for="floating_species"
-                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{plant.name}}</label>
+                        class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">{{plant.species}}</label>
             </div>
 
             {{!-- Scientific Name --}}
             <div class="relative z-0 w-full mb-6 group">
-                  <input type="text" name="floating_scientific_name" id="scientific-name"
+                  <input type="text" name="floating_scientific_name" id="edit-scientific-name"
                         class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
                         placeholder=" " required />
                   <label for="floating_scientific_name"
@@ -57,7 +56,7 @@
 
             {{!-- Adoption Date --}}
             <div class="relative z-0 w-full mb-6 group text-[#2c2e28]">
-                  <input type="text" name="floating_adoption_date" id="adoption-date"
+                  <input type="text" name="floating_adoption_date" id="edit-adoption-date"
                         class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-[#225f69] peer"
                         placeholder=" " required />
                   <label for="floating_adoption_date"
@@ -68,7 +67,7 @@
 
             {{!-- Height --}}
             <div class="relative z-0 w-full mb-6 group">
-                  <input type="text" name="floating_scientific_name" id="height"
+                  <input type="text" name="floating_height" id="edit-height"
                         class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
                         placeholder=" " required />
                   <label for="floating_scientific_name"
@@ -79,7 +78,7 @@
            
             {{!-- Water Needs --}}
             <div class="relative z-0 w-full mb-6 group">
-                  <input type="text" name="floating_water_notes" id="water"
+                  <input type="text" name="floating_water_notes" id="edit-water"
                         class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
                         placeholder=" " required />
                   <label for="floating_water_notes"
@@ -88,7 +87,7 @@
 
             {{!-- Sunshine Needs --}}
             <div class="relative z-0 w-full mb-6 group">
-                  <input type="text" name="floating_sunshine_notes" id="sunshine-needs"
+                  <input type="text" name="floating_sunshine_notes" id="edit-sunshine-needs"
                         class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
                         placeholder=" " required />
                   <label for="floating_sunshine_notes"
@@ -97,8 +96,8 @@
 
             {{!-- Type --}}
             <div class="relative z-0 w-full mb-6 group">
-                  <select id="plant-type" name="bad_day" class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer">
-                        <option value="" disabled selected hidden>{{plant.type}}</option>
+                  <select id="edit-plant-type" name="edit_type" class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer">
+                        <option value="" disabled selected hidden>{{plant.plantType}}</option>
                         <option value="Flowering">Flowering</option>
                         <option value="Foliage">Foliage</option>
                         <option value="Succulent">Succulent</option>
@@ -111,7 +110,7 @@
 
             {{!-- Stage --}}
             <div class="relative z-0 w-full mb-6 group">
-                  <select id = "stage" name="bad_day" class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer">
+                  <select id = "edit-stage" name="edit_stage" class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer">
                         <option value="" disabled selected hidden>{{plant.stage}}</option>
                         <option value="Seed">Seed</option>
                         <option value="Sprout">Sprout</option>
@@ -123,7 +122,7 @@
 
             {{!-- General Notes --}}
       <div class="relative z-0 w-full mb-6 group">
-            <input type="text" name="floating_gen_notes" id="general-notes"
+            <input type="text" name="floating_gen_notes" id="edit-general-notes"
                   class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
                   placeholder=" " required />
             <label for="floating_gen_notes"
@@ -131,7 +130,7 @@
       </div>
             {{!-- Submit Button --}}
       <div class="inline-flex items-center relative z-0 w-60 mb-6 group">
-            <button type="submit" id="plant-submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-[#2c2e28] rounded-lg group bg-gradient-to-br from-[#2c2e28] to-[#284c20] group-hover:from-[#2c2e28] group-hover:to-[#284c20] hover:text-[#C4CEB4] focus:ring-4 focus:outline-none focus:ring-[#284c20]">
+            <button type="submit" id="edit-plant-submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-[#2c2e28] rounded-lg group bg-gradient-to-br from-[#2c2e28] to-[#284c20] group-hover:from-[#2c2e28] group-hover:to-[#284c20] hover:text-[#C4CEB4] focus:ring-4 focus:outline-none focus:ring-[#284c20]">
                   <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#C4CEB4] rounded-md group-hover:bg-opacity-0">
                         <i class="fa-solid fa-plus"></i> Submit plant edits
                   </span>

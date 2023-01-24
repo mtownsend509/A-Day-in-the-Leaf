@@ -205,3 +205,51 @@ if (document.querySelector('#contact-button')) {
   document.querySelector('#contact-button').addEventListener('click', contactPage)
 }
 
+
+document.querySelector('#editform').addEventListener('submit', editFormHandler);
+
+async function editFormHandler(event) {
+  const name = document.querySelector('input[name="floating_plant_name"]').value;
+  const species = document.querySelector('input[name="floating_species"]').value;
+  const scientificName = document.querySelector('input[name="floating_scientific_name"]').value;
+  const adoptionDate = document.querySelector('input[name="floating_adoption_date"]').value;
+  const height = document.querySelector('input[name="floating_height"]').value;
+  const waterNeeds = document.querySelector('input[name="floating_water_notes"]').value;
+  const sunshineNeeds = document.querySelector('input[name="floating_sunshine_notes"]').value;
+  const plantType = document.querySelector('input[name="edit_type"]').value;
+  const stage = document.querySelector('input[name="edit_stage"]').value;
+  const generalNotes = document.querySelector('input[name="floating_gen_notes"]').value;
+
+  const id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+  ]
+
+  const response = await fetch(`/api/plant/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      id,
+      name,
+      species,
+      scientificName,
+      adoptionDate,
+      height,
+      stage,
+      plantType,
+      waterNeeds,
+      watered,
+      waterCurrent,
+      waterMax,
+      sunshineNeeds,
+      generalNotes
+    }),
+    headers: {
+        'Content-Type': 'application/json'
+    }
+  });
+  
+  if (response.ok) {
+    document.location.replace('/dashboard/');
+  } else {
+    alert(response.statusText);
+  }
+}
