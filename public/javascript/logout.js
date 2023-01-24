@@ -75,8 +75,9 @@ const singlePlantPage = async (event) => {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ waterCurrent: 0, watered: true})
-          })
+          });
           if (response.ok) {
+            location.reload()
             window.alert('your plant has been watered!');
           }
       } else {
