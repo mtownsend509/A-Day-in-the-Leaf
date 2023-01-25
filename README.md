@@ -39,10 +39,8 @@ This project allowed four contributors to in turn test the pair programming mode
 
 ## Installation
 
-<!-- TODO: update link
-TODO: beef up -->
 ### Visit The Deployed Application
-Follow this [link]() to visit the app and create an account by entering a username and password at the main page. Once you're logged in, you can add new plants and the associated information information. Once added, you can track their watering, growth, care, etc.
+Follow this [link](https://a-day-in-the-leaf.herokuapp.com/) to visit the app and create an account by entering a username and password at the main page. Once you're logged in, you can add new plants and the associated information information. Once added, you can track their watering, growth, care, etc.
 
 ### How to Install Locally
 <!-- What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running. -->
@@ -53,6 +51,9 @@ Follow this [link]() to visit the app and create an account by entering a userna
 5. Be sure to run Schema.sql through mySQL and start the server before testing
 6. Run application in your browser locally using "http://localhost:3001/"
 5. Play as you'd like!
+
+### To Use The Deployed Application
+This application uses common website workflow. You will need to log in or sign up before doing anything else. Once logged in you will see an empty dashboard, that's okay! Press the "add plant" button to add your first plant to your dashboard. In the add plant page you will need to add various information about your houseplant's care needs and any other care information you'd like to add. Once you're done press the submit button at the bottom of the page, and your new plant should be populated on your dashboard. Add more if you'd like, or use this plant to help you keep track of it's needs and care using the water button.
 
 ## Usage
 
@@ -78,6 +79,8 @@ There are 8 main sections of this repository:
 
 - [Mock Folder](https://github.com/mtownsend509/A-Day-in-the-Leaf/tree/Develope/mock) - Contains the html files used to generate a mockup of each webpage
 
+- [Images folder](https://github.com/mtownsend509/A-Day-in-the-Leaf/tree/Develope/images) - Contains all webpage images
+
 - [crontest.js](https://github.com/mtownsend509/A-Day-in-the-Leaf/blob/Develope/crontest.js) - Contains the cron utility js file
 
 - [package-lock.json](https://github.com/mtownsend509/A-Day-in-the-Leaf/blob/Develope/package-lock.json) - Contains all the node dependencies
@@ -90,10 +93,8 @@ There are 8 main sections of this repository:
 
 - [License](https://github.com/abbeydoyle/ecommerce-backend/blob/main/LICENSE) - Contains the webpage license
 
-- [ReadMe](https://github.com/mtownsend509/A-Day-in-the-Leaf/blob/Develope/LICENSE) - This file containing an executive overview of the project
+- [ReadMe](https://github.com/mtownsend509/A-Day-in-the-Leaf/blob/Develope/README.md) - This file containing an executive overview of the project
 
-### To Use The Deployed Application
-This application uses common website workflow. You will need to log in or sign up before doing anything else. Once logged in you will see an empty dashboard, that's okay! Press the "add plant" button to add your first plant to your dashboard. In the add plant page you will need to add various information about your houseplant's care needs and any other care information you'd like to add. Once you're done press the submit button at the bottom of the page, and your new plant should be populated on your dashboard. Add more if you'd like, or use this plant to help you keep track of it's needs and care using the water button.
 
 <!-- Provide instructions and examples for use. Include screenshots as needed.
 
@@ -105,17 +106,15 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-<!-- TODO: contributions -->
-
 This webpage was built using UW Trilogy Bootcamp class materials as references.
 
 There are four contributors to this project. Each member along with their contributions are listed below.
 
-- Zach Beiser: Handlebars, debugging routes, Public JS, User Story, README, wireframing  
+- Zach Beiser: Handlebars, debugging routes, Public JS, User Story, wireframing  
 
 - Katrina Baker: Routes, handlebars, presentation, image sourcing, logo design, debugging
 
-- Abigail Doyle: HTML, Tailwind Styling, Debugging, Handlebars, models, navigation and functionality for handlebars
+- Abigail Doyle: HTML, Tailwind Styling, Debugging, Handlebars, models, navigation and functionality for handlebars, README
 
 - Matthew Townsend: DB schema,  Public JS, Seeds, models, Debugging, CronJob, plant graveyard, functionality and navigation
 
@@ -168,6 +167,7 @@ This page features:
 - Session authentication and timeout with express-session and cookies
 - Deployment with Heroku
 - Cron utility package to automate watering schedule
+- Chalk for terminal interface
 - Responsive webpage
 - Sticky sidebar with plant database links that open in new tabs
 - Sticky navbar with navigation links responsive to the current page open
@@ -175,9 +175,9 @@ This page features:
 - Dashboard specific to each user
 - Plant specific pages with further information about the specified plant
 - The option to water or delete each plant from the dashboard
+- Graveyard dashboard that populates with a user's deleted plants
 - The option to add a plant from the dashboard
 - Autoupdated plant watering information using Cron
-- Contact form to submit feedback
 - Footer with the Github portfolios of each member linked
 
 
@@ -189,8 +189,23 @@ If you created an application or package and would like other developers to cont
 
 ## Tests
 
-<!-- TODO: create tests -->
 <!-- Go the extra mile and write tests for your application. Then provide examples on how to run them here. -->
+
+- Let your computer sit idle and see your session time out
+- Check back and notice your plants water status change depending on the length of time entered with the input form
+- Test the application on various screen sizes and watch it respond
+- Scroll on any page and watch the sidebar and navbar stay in postion
+- Click the dashboard sidebar links to be redirected to plant identification databases
+- Click the graveyard sidebar links to be redirected to plant disease databases
+- Sign up as a new user and log in at a later time to check in on your plants
+- Click any navbar links, including our Logo, to be redirected to the appropriate page
+- Click on any of your plants to see further information
+- Click the water button to water your plant
+- Delete a plant then see it populate the graveyard page
+- The option to water or delete each plant from the dashboard
+- Add a plant to populate the dashboard
+- Bypassing any input field will result in a window alert
+- Click the footer links to be redirected to that member's Github portfolio
 
 ## Questions
 
