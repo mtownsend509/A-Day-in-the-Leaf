@@ -1,24 +1,37 @@
+// dependencies
+// terminal output styling
 const chalk = require('chalk');
+// file path utility
 const path = require('path');
+// express server
 const express = require('express');
+// module to store session data cookies
 const session = require('express-session');
+// handlebars as template engine
 const exphbs = require('express-handlebars');
+// api routes
 const routes = require('./Controllers');
+// helper utility functions
 const helpers = require('./Utils/Helpers');
+// npm cronjob module for automated watering schedule
 var CronJob = require('cron').CronJob;
+// plant model
 const { Plant } = require('./Models/index');
-
+// database connection
 const sequelize = require('./config/Connection');
 const Op = require('sequelize').Op;
 const { put } = require('./Controllers');
+// store session cookies
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+// initialize express with local port
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
+// user session with timeout
 const sess = {
   secret: 'Super secret secret',
   cookie: {
@@ -34,35 +47,33 @@ const sess = {
   })
 };
 
+// use session
 app.use(session(sess));
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-//test
-// app.use(express.static('public'))
-
-//test
-//  app.engine('handlebars', hbs.engine({   extname: '.hbs',
-//    defaultLayout: false,
-//    layoutsDir: 'views'
-//  }));
-
-//  app.set( 'view engine', 'hbs');
-
+// middleware specification
+// implement images for handlebars
 app.use(express.static('images'));
-
+// json parsing
 app.use(express.json());
+// parsing urlencoded payloads
 app.use(express.urlencoded({ extended: true }));
+// implement server path to public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
+// use routes export
 app.use(routes);
 
+// begin db connection and listen on specified server port
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(chalk.bgHex('#2c2e28').white(`Now listening at port ${PORT}`)));
 });
 
+
+// cronjob test
 var test = new CronJob(
 	'* * * * *',
 	async function() {
@@ -84,4 +95,3 @@ var test = new CronJob(
 );
 
 test;
-
