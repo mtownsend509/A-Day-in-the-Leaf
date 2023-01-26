@@ -1,3 +1,7 @@
+{{!-- Single plant page by id --}}
+
+{{!-- navbar --}}
+{{!-- button links implemented in public js --}}
 <nav class="bg-[#2c2e28] py-2 sm:px-4">
       <div class="container flex flex-wrap items-center justify-between mx-auto">
             <a href="/" class="flex items-center">
@@ -12,15 +16,15 @@
                         <li>
                               <a href="#" id="logout-button" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Log out</a>
                         </li>
-                        <li>
-                              <a href="#" id="contact-button" class="block py-2 pl-3 pr-4 text-[#C4CEB4] rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-[#C4CEB4] md:p-0">Contact</a>
-                        </li>
                   </ul>
             </div>
       </div>
 </nav>
 
+{{!-- single plant --}}
 <main class="grid grid-cols-8 gap-4 pt-20">
+      {{!-- image populated by specified plant type through public images folder --}}
+      {{!-- disappears for smaller screens --}}
       <div class="col-start-2 col-end-4 bg-[#C4CEB4] text-[#225f69] rounded-lg flex drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)] flex invisible lg:visible"
             id="plantimage">
                   <img src="/{{plant.plantType}}.png" alt="{{plant.plantType}} image"
@@ -30,57 +34,57 @@
       <div
             class="col-start-4 col-end-8 font-serif bg-[#C4CEB4] text-[#225f69] rounded-lg pb-5 drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)] leading-[3rem] text-xl relative">
             <h1 class="font-semibold text-3xl py-5 text-center">
-                  {{plant.name}} {{!-- {{plant.name}} --}}
+                  {{plant.name}} 
             </h1>
             <div class="flex flex-row px-10 gap-5">
                   <h2 class="basis-1/3 font-bold">Species: </h2>
-                  <h3 class="basis-2/3">{{plant.species}} {{!-- {{plant.species}} --}}</h3>
+                  <h3 class="basis-2/3">{{plant.species}}</h3>
             </div>
             <div class="flex flex-row px-10 gap-5">
                   <h2 class="basis-1/3 font-bold">Scientific name: </h2>
-                  <h3 class="basis-2/3">{{plant.scientificName}} {{!-- {{plant.scientificName}} --}}
-                  </h3>
+                  <h3 class="basis-2/3">{{plant.scientificName}}</h3>
             </div>
             <div class="flex flex-row px-10 gap-5">
                   <h2 class="basis-1/3 font-bold">Adoption date: </h2>
-                  <h3 class="basis-2/3">{{plant.adoptionDate}} {{!-- {{plant.adoptionDate}} --}}
-                  </h3>
+                  <h3 class="basis-2/3">{{plant.adoptionDate}}</h3>
             </div>
             <div class="flex flex-row px-10 gap-5">
                   <h2 class="basis-1/3 font-bold">Height: </h2>
-                  <h3 class="basis-2/3">{{plant.height}} {{!-- {{plant.height}} --}}</h3>
+                  <h3 class="basis-2/3">{{plant.height}}</h3>
             </div>
             <div class="flex flex-row px-10 gap-5">
                   <h2 class="basis-1/3 font-bold">Type: </h2>
-                  <h3 class="basis-2/3">{{plant.plantType}} {{!-- {{plant.stage}} --}}</h3>
+                  <h3 class="basis-2/3">{{plant.plantType}}</h3>
             </div>
             <div class="flex flex-row px-10 gap-5">
                   <h2 class="basis-1/3 font-bold">Stage: </h2>
-                  <h3 class="basis-2/3">{{plant.stage}} {{!-- {{plant.stage}} --}}</h3>
+                  <h3 class="basis-2/3">{{plant.stage}}</h3>
             </div>
             <div class="flex flex-row px-10 gap-5">
                   <h2 class="basis-1/3 font-bold">Water frequency: </h2>
-                  <h3 class="basis-2/3">Every {{plant.waterMax}} days{{!-- {{plant.waterNeeds}} --}}</h3>
+                  <h3 class="basis-2/3">Every {{plant.waterMax}} days</h3>
             </div>
             <div class="flex flex-row px-10 gap-5">
                   <h2 class="basis-1/3 font-bold">Sun Requirement: </h2>
-                  <h3 class="basis-2/3 ">{{plant.sunshineNeeds}} {{!-- {{plant.sunshineNeeds}} --}}
-                  </h3>
+                  <h3 class="basis-2/3 ">{{plant.sunshineNeeds}}</h3>
             </div>
             <div class="flex flex-row px-10 gap-5">
                   <h2 class="basis-1/3 font-bold">Watered?: </h2>
-                  <h3 class="basis-2/3 ">{{plant.watered}} {{!-- {{plant.watered}} --}}</h3>
+                  <h3 class="basis-2/3 ">{{plant.watered}}</h3>
             </div>
             <div class="flex flex-row px-10 gap-5">
                   <h2 class="basis-1/3 font-bold">Notes: </h2>
-                  <h3 class="basis-2/3 ">{{plant.generalNotes}} {{!-- {{plant.generalNotes}} --}}
-                  </h3>
+                  <h3 class="basis-2/3 ">{{plant.generalNotes}}</h3>
             </div>
 
+            {{!-- nonfunctional edit button --}}
+            {{!-- FIXME: awaiting fixed route --}}
             <div class="absolute bottom-2 right-2 text-2xl">
                   <button id="edit-button"><i class="fa-regular fa-file-pen" title="Edit this plant"></i></button>
             </div>
       
       </div>
+
+      {{!-- link to public js --}}
       <script src="/javascript/logout.js"></script>
 </main>
