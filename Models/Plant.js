@@ -1,7 +1,8 @@
+// db connection
 const sequelize = require('../config/Connection');
 
+// model functionality
 const { Model, DataTypes } = require('sequelize');
-// const { DataTypes } = require('sequelize/types');
 
 class Plant extends Model {}
 
@@ -19,7 +20,6 @@ Plant.init(
         },
         species: {
             type: DataTypes.STRING
-            // type: DataTypes.DATEONLY,
         },
         scientificName: {
             type: DataTypes.STRING
@@ -32,18 +32,12 @@ Plant.init(
         },
         stage: {
             type: DataTypes.STRING
-            //this will be like seed, sprout, or mature
-            // enum will only accept certain values, might make it easier if we track with pictures
-            // would need to specify these values to user in the prompt
-            // type: DataTypes.ENUM,
-            // values: ['seed', 'sprout', 'mature']
         },
         waterNeeds: {
             type: DataTypes.STRING
         },
         watered: {
             type: DataTypes.BOOLEAN
-            //Chron Job *third party
         },
         sunshineNeeds: {
             type: DataTypes.STRING
@@ -51,25 +45,13 @@ Plant.init(
         plantType: {
             type: DataTypes.STRING
         },
-        //these next two are for cron job
+        // for cron job
         waterCurrent: {
             type: DataTypes.INTEGER
         },
         waterMax: {
             type: DataTypes.INTEGER
         },
-        // humidityNeeds: {
-        //     type: DataTypes.STRING
-        // },
-        // soilType: {
-        //     type: DataTypes.STRING
-        // },
-        // fertilizerType: {
-        //     type: DataTypes.STRING
-        // },
-        // idealTemp: {
-        //     type: DataTypes.INTEGER
-        // },
         generalNotes: {
             type: DataTypes.STRING
         },

@@ -1,7 +1,8 @@
+// db connection
 const sequelize = require('../config/Connection');
 
+// model functionality
 const { Model, DataTypes } = require('sequelize');
-// const { DataTypes } = require('sequelize/types');
 
 class Graveyard extends Model {}
 
@@ -19,7 +20,6 @@ Graveyard.init(
         },
         species: {
             type: DataTypes.STRING
-            // type: DataTypes.DATEONLY,
         },
         profile_id: {
             type: DataTypes.INTEGER,
