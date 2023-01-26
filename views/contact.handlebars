@@ -1,3 +1,9 @@
+{{!-- contact page --}}
+{{!-- currently nonfunctional and not implemented --}}
+{{!-- FIXME: submit form capability --}}
+
+{{!-- navbar --}}
+{{!-- button links implemented in public js --}}
 <nav class="bg-[#2c2e28] py-2 sm:px-4 sticky top-[0px] z-50">
       <div class="container flex flex-wrap items-center justify-between mx-auto">
             <a href="" class="flex items-center">
@@ -23,7 +29,9 @@
       </div>
 </nav>
 
+{{!-- contact form --}}
 <form class="px-20 bg-[#C4CEB4] py-10 m-20 rounded-lg drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]">
+      {{!-- name --}}
       <div class="grid md:grid-cols-2 md:gap-6">
             <div class="relative z-0 w-full mb-6 group">
                   <input type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer" placeholder=" " required />
@@ -35,28 +43,35 @@
             </div>
       </div>
 
+      {{!-- email address --}}
       <div class="relative z-0 w-full mb-6 group">
             <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-[#225f69] peer" placeholder=" " required />
             <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                   Email address</label>
       </div>
 
+      {{!-- contact message --}}
       <div class="relative z-0 w-full mb-6 group">
             <input type="message" name="floating_message" id="floating_message" class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-[#225f69] peer" placeholder=" " required />
             <label for="floating_message large-input" class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                   Message</label>
       </div>
 
+      {{!-- FIXME: nonfunctional copy option --}}
+      {{!-- option to send submitter a copy --}}
       <div class="form-group form-check text-center mb-6 font-serif">
             <input checked id="checkbox-1" type="checkbox" value="" class="w-4 h-4 text-sm text-green bg-transparent bg-gray-100 border-gray-300 rounded focus:ring-green">
             <label for="checkbox-1">Send me a copy of this message</label>
       </div>
 
+      {{!-- submit button --}}
       <button onclick="submit" type="submit" class="text-[#C4CEB4] bg-[#2c2e28] hover:bg-[#24292F]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 mr-2 mb-2">Send</button>
 </form>
 
+{{!-- footer with contributor github info --}}
 <footer class="text-center font-serif bg-[#2c2e28] text-[#C4CEB4] fixed inset-x-0 bottom-0 pt-5 drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]">
   <div class="grid grid-cols-4 gap-3">
+    {{!-- KAT --}}
     <div class="grid grid-cols-1">
       <h5 class="font-bold text-xl">Katrina Baker</h5>
       <br />
@@ -86,6 +101,7 @@
         </button>
       </div>
     </div>
+    {{!-- ZACH --}}
     <div class="grid grid-cols-1">
       <h5 class="font-bold text-xl">Zach Beiser</h5>
       <br />
@@ -115,6 +131,7 @@
         </button>
       </div>
     </div>
+    {{!-- ABBEY --}}
     <div class="grid grid-cols-1">
       <h5 class="font-bold text-xl">Abigail Doyle</h5>
       <br />
@@ -144,6 +161,7 @@
         </button>
       </div>
     </div>
+    {{!-- MATT --}}
     <div class="grid grid-cols-1">
       <h5 class="font-bold text-xl">Matthew Townsend</h5>
       <br />
@@ -176,4 +194,5 @@
   </div>
 </footer>
 
+{{!-- link to public js --}}
 <script src="/javascript/logout.js"></script>

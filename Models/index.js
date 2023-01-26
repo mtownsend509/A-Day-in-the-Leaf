@@ -1,7 +1,9 @@
+// dependencies
 const Profile = require('./Profile');
 const Plant = require('./Plant');
 const Graveyard = require('./Graveyard');
 
+// model relationships
 Profile.hasMany(Plant, {
   foreignKey: 'profile_id',
   onDelete: 'CASCADE'

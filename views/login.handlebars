@@ -1,3 +1,7 @@
+{{!-- login page --}}
+
+{{!-- navbar --}}
+{{!-- button links implemented in public js --}}
 <nav class="bg-[#2c2e28] py-2 sm:px-4">
       <div class="container flex flex-wrap items-center justify-between mx-auto">
             <a href="/" class="flex items-center">
@@ -19,23 +23,32 @@
 
 <br>
 
+{{!-- login form --}}
+{{!-- all inputs required, pop up messages in public js file --}}
 <form class="px-20 bg-[#C4CEB4] py-10 m-20 rounded-lg drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]">
       <div class="text-xl text-[#2c2e28] font-semibold mb-5">
             <h2>Welcome back!</h2>
       </div>
 
+      {{!-- username --}}
       <div class="relative z-0 w-full mb-6 group text-[#2c2e28]">
             <input type="username" name="floating_username" id="floating_username" class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer" placeholder=" " required />
             <label for="floating_username" class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Username</label>
       </div>
+
+      {{!-- password --}}
       <div class="relative z-0 w-full mb-6 group">
             <input type="password" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer" placeholder=" " required />
             <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
       </div>
+
+      {{!-- login button --}}
       <button type="submit" id="login_submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-[#2c2e28] rounded-lg group bg-gradient-to-br from-[#2c2e28] to-[#284c20] group-hover:from-[#2c2e28] group-hover:to-[#284c20] hover:text-[#C4CEB4] focus:ring-4 focus:outline-none focus:ring-[#284c20]">
             <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#C4CEB4] rounded-md group-hover:bg-opacity-0">
                   Log in
             </span>
       </button>
 </form>
+
+{{!-- link to public js --}}
 <script src="/javascript/login.js"></script>
