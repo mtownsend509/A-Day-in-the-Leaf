@@ -1,8 +1,12 @@
+// dependencies
+// express connection
 const express = require('express');
 const router = express.Router();
+// models
 const { Profile, Plant } = require("../../Models");
 
 //for insomnia testing
+// get all profile routes
 router.get('/', async (req, res) => {
   try {
     const profData = await Profile.findAll();
@@ -12,6 +16,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// get profile by id route
 router.get('/:id', (req, res) => {
   Profile.findOne({
     attributes: { 
@@ -44,7 +49,7 @@ router.get('/:id', (req, res) => {
   });
 });
 
-//post method to root
+// create profile route
 router.post("/", async (req, res) => {
   try {
     const profileData = await Profile.create(req.body);
@@ -58,12 +63,14 @@ router.post("/", async (req, res) => {
   }
 });
 
+// login route
 router.post("/login", async (req, res) => {
   try {
+    // check for existing username
     const profileData = await Profile.findOne({
       where: { username: req.body.username },
     });
-    //if statement validating username======================================================================================
+    // if statement validating username
     if (!profileData) {
       res
         .status(400)
@@ -73,7 +80,7 @@ router.post("/login", async (req, res) => {
 
     const correctPassword = await profileData.checkPassword(req.body.password);
 
-    //if statement validating password======================================================================================
+    // if statement validating password
     if (!correctPassword) {
       res
         .status(400)
@@ -83,7 +90,7 @@ router.post("/login", async (req, res) => {
         });
       return;
     }
-    //session for keeping profile logged in====================================================================================
+    // session for keeping profile logged in
     req.session.save(() => {
       req.session.profile_id = profileData.id;
       req.session.logged_in = true;
@@ -99,7 +106,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-//post for log out "destroy" active session=================================================================================
+// post route for log out "destroy" active session
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
@@ -110,6 +117,7 @@ router.post("/logout", (req, res) => {
   }
 });
 
+// delete profile by id
 router.delete("/:id", (req, res) => {
   const deadProfile = Profile.destroy({
     where: { id: req.params.id }

@@ -1,7 +1,10 @@
+// model functionality
 const { Model, DataTypes } = require('sequelize');
-// const { DataTypes } = require('sequelize/types');
+
+// password hashing
 const bcrypt = require('bcrypt');
 
+// db connection
 const sequelize = require('../config/Connection');
 
 class Profile extends Model {
@@ -14,18 +17,16 @@ Profile.init(
     {
         id: {
             type: DataTypes.INTEGER,
-            // allowNull: false,
             primaryKey: true,
             autoIncrement: true
         },
         username: {
             type: DataTypes.STRING,
-            // allowNull: false,
             unique: true,
         },
         password: {
             type: DataTypes.STRING,
-            // allowNull: false,
+            // TODO: add password validation, future goal
             // validate: {
             //     len: [8, 64],
             //     // this validation only allows letter passwords and is case sensitive

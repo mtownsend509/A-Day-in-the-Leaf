@@ -1,3 +1,7 @@
+{{!-- plant graveyard --}}
+
+{{!-- navbar --}}
+{{!-- button links implemented in public js --}}
 <nav class="bg-[#2c2e28] py-2 sm:px-4">
       <div class="container flex flex-wrap items-center justify-between mx-auto">
             <a href="/" class="flex items-center">
@@ -17,6 +21,8 @@
       </div>
 </nav>
 
+{{!-- add plant button --}}
+{{!-- redirect to add plant page --}}
 <div class="grid grid-cols-10 mt-10 font-serif">
       <button id="plant-add" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-[#2c2e28] rounded-lg group bg-gradient-to-br from-[#2c2e28] to-[#284c20] group-hover:from-[#2c2e28] group-hover:to-[#284c20] hover:text-[#C4CEB4] focus:ring-4 focus:outline-none focus:ring-[#284c20] col-start-9">
             <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#C4CEB4] rounded-md group-hover:bg-opacity-0">
@@ -25,30 +31,31 @@
       </button>
 </div>
 
-
+{{!-- dashboard --}}
 <div class="bg-inherit antialiased">
+      {{!-- sticky sidebar with plant databases --}}
       <div class="flex flex-col fixed top-[400px]">
             <a href="https://plants.usda.gov/home" class="text-3xl" target="_blank"><i class="fa-solid fa-seedling" title="USDA Plant Database"></i></a> 
             <a href="https://garden.org/plants/" class="text-3xl mb-2" target="_blank"><i class="fa-solid fa-leaf" title="Garden Plant Database"></i></a>
             <a href="https://www.rhs.org.uk/plants" class="text-3xl mb-2" target="_blank"><i class="fa-solid fa-plant-wilt" title="RHS Plant Identifier"></i></a> 
       </div>
+
+      {{!-- dashboard plant loop --}}
       <div class="bg-inherit md:max-2xl:col-span-6 pl-20 ml-5 flex-wrap">
             <div class="antialiased bg-inherit text-gray-900 font-serif p-6">
                   <div class="container mx-auto">
                         <div id="plants-container" class="flex flex-wrap -mx-4 cardcontainer">
-                              <!-- start cards -->
-                              <!-- single card start -->
-                                    {{!-- not sure if this is correct --}}
+
                               {{#each plant as |plant|}}
                               <div class="wrapper bg-transparent antialiased text-gray-900 w-full sm:w-1/2 md:w-1/2 xl:w-1/4 m-10">
                                     <div>
+                                          {{!-- image populated from specified plant type via image folder --}}
                                           <img src="/{{plant.plantType}}.png" alt="plant image" class="w-full object-cover object-center rounded-lg" id="planticon">
                                           <div id={{plant.id}} class="relative px-4 -mt-16">
                                                 <div id={{plant.id}} class="bg-white p-6 rounded-lg shadow-lg">
                                                       <div id={{plant.id}} class="flex justify-between">
                                                             <div id={{plant.id}} class="flex items-baseline">
                                                                   <span id={{plant.id}} class="plantSpan text-[#eae3ba] bg-[#2c2e28] text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
-                                                                        {{!-- species instead of type? --}}
                                                                         {{plant.plantType}}
                                                                   </span>
                                                             </div>
@@ -61,7 +68,7 @@
                                                             {{plant.name}}
                                                       </h4>
                                                       <div id={{plant.id}} class="mt-1">
-                                                                  Watered: 
+                                                            Watered: 
                                                             <span id={{plant.id}} class="text-gray-600 text-sm">
                                                                   {{plant.watered}}
                                                             </span>
@@ -74,52 +81,8 @@
                                                       </div>
                                                 </div>
                                           </div>
-                                                      {{!-- </div> --}}
-                                                      <!--    <div id="modal" class="modal">
-                                                            <form>
-                                                                  <div>
-                                                                        <input type="text" name="name" placeholder=" " required />
-                                                                        <label for="name">plant name</label>
-                                                                  </div>
-                                                                  <div class="hide">
-                                                                        <input type="text" name="species" placeholder=" " required />
-                                                                        <label for="species">species</label>
-                                                                  </div>
-                                                                  <div class="hide">
-                                                                        <input type="text" name="scientificName" placeholder=" " required />
-                                                                        <label for="scientificName">Scientific Name</label>
-                                                                  </div>
-                                                                  <div class="hide">
-                                                                        <input type="text" name="adoptionDate" placeholder=" " required />
-                                                                        <label for="adoptionDate">Adoption date</label>
-                                                                  </div>
-                                                                  <div class="hide">
-                                                                        <input type="number" name="height" placeholder=" " required />
-                                                                        <label for="height">plant height</label>
-                                                                  </div>
-                                                                  <div class="hide">
-                                                                        <input type="text" name="stage" placeholder=" " required />
-                                                                        <label for="stage">plant life stage</label>
-                                                                  </div>
-                                                                  <div class="hide">
-                                                                        <input type="text" name="waterNeeds" placeholder=" " required />
-                                                                        <label for="waterNeeds">Water Needs</label>
-                                                                  </div>
-                                                                  <div class="hide">
-                                                                        <input type="text" name="sunshineNeeds" placeholder=" " required />
-                                                                        <label for="sunshineNeeds">sunshine needs</label>
-                                                                  </div>
-                                                                  <div class="hide">
-                                                                        <input type="text" name="generalNotes" placeholder=" " required />
-                                                                        <label for="generalNotes">General Notes</label>
-                                                                  </div>
-                                                                  <div>
-                                                                        <input type="button" id="form-submit">
-                                                                  </div>
-                                                            </form> -->
                                     </div>
                               </div>
-                        <!-- single card end -->
                         {{/each}}
                         </div>
                   </div>
@@ -127,4 +90,5 @@
       </div>
 </div>
 
+{{!-- link to public js --}}
 <script src="/javascript/logout.js"></script>

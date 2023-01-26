@@ -1,3 +1,7 @@
+{{!-- add a plant page --}}
+
+{{!-- navbar --}}
+{{!-- button links implemented in public js --}}
 <nav class="bg-[#2c2e28] py-2 sm:px-4">
       <div class="container flex flex-wrap items-center justify-between mx-auto">
             <a href="/" class="flex items-center">
@@ -19,6 +23,7 @@
 
 <br>
 
+{{!-- plant add form --}}
 <form class="px-20 bg-[#C4CEB4] py-10 m-20 rounded-lg drop-shadow-[15px_15px_15px_rgba(44,46,40,0.5)]">
       <div class="text-xl text-[#2c2e28] font-semibold mb-5">
             <h2>Add your plant here:</h2>
@@ -63,7 +68,6 @@
                   <label for="floating_adoption_date"
                         class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Adoption
                         Date</label>
-                  {{!-- maybe add today's date using hbs and helper --}}
                   <p class ="text-xs">(If you don't know the exact adoption date, enter today's date.)</p>
             </div>
 
@@ -97,6 +101,7 @@
             </div>
 
             {{!-- Type --}}
+            {{!-- Drop down to populate exact string for image population --}}
             <div class="relative z-0 w-full mb-6 group">
                   <select id="plant-type" name="bad_day" class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer">
                         <option value="" disabled selected hidden>What category matches your plant best?</option>
@@ -122,7 +127,7 @@
             </div>  
       </div>          
 
-            {{!-- General Notes --}}
+      {{!-- General Notes --}}
       <div class="relative z-0 w-full mb-6 group">
             <input type="text" name="floating_gen_notes" id="general-notes"
                   class="block py-2.5 px-0 w-full text-sm text-[#5e6357] bg-transparent border-0 border-b-2 border-[#5e6357] appearance-none focus:outline-none focus:ring-0 focus:border-sky-800 peer"
@@ -130,7 +135,7 @@
             <label for="floating_gen_notes"
                   class="peer-focus:font-medium absolute text-sm text-[#2c2e28]  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#2c2e28] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Any notes you'd like to add? Ex: plant health, special care, etc.</label>
       </div>
-            {{!-- Submit Button --}}
+      {{!-- Submit Button --}}
       <div class="inline-flex items-center relative z-0 w-60 mb-6 group">
             <button type="submit" id="plant-submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-[#2c2e28] rounded-lg group bg-gradient-to-br from-[#2c2e28] to-[#284c20] group-hover:from-[#2c2e28] group-hover:to-[#284c20] hover:text-[#C4CEB4] focus:ring-4 focus:outline-none focus:ring-[#284c20]">
                   <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-[#C4CEB4] rounded-md group-hover:bg-opacity-0">
@@ -139,4 +144,6 @@
             </button>
       </div>
 </form>
+
+{{!-- link to public js --}}
 <script src="/javascript/logout.js"></script>

@@ -1,14 +1,9 @@
-
+/* default background format */
 .html {
       background-image: url(../assets/leaves.png);
       font-family: serif;
       background-color: #C4CEB4;
 }
-
-/* #plantimage {
-      background-image: url(../assets/placeholder.png);
-      background-size: contain;
-} */
 
 .modal {
     display: none;
@@ -22,6 +17,7 @@
     display: none;
 }
 
+/* graveyard background format */
 .graveyardimage {
     background-image: url(../assets/deadtrees.png);
     font-family: serif;

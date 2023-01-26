@@ -1,8 +1,14 @@
+// dependencies
+// express connection
 const express = require('express');
 const router = express.Router();
+// models
 const { Plant, Profile, Graveyard } = require("../Models");
+// auth helper
 const withAuth = require("../Utils/Auth");
 
+// rendering routes
+// get all plants route
 router.get('/', withAuth, (req, res) => {
       Plant.findAll({
             where: {
@@ -30,6 +36,7 @@ router.get('/', withAuth, (req, res) => {
                   },
             ],
       })
+      // render dashboard
       .then(dbPlantData => {
 
             const plant = dbPlantData.map(plant => plant.get({ plain: true }));
@@ -45,7 +52,7 @@ router.get('/', withAuth, (req, res) => {
       })
 })
 
-
+// get plant by id route
 router.get('/plant/:id', withAuth, (req, res) => {
       Plant.findOne({
             where: {
@@ -72,6 +79,7 @@ router.get('/plant/:id', withAuth, (req, res) => {
                   },
             ],
       })
+      // render single plant page
       .then(dbPlantData => {
             if (!dbPlantData) {
                   res.status(404).json({ message: 'No plant found with this id' });
@@ -90,6 +98,8 @@ router.get('/plant/:id', withAuth, (req, res) => {
       })
 })
 
+// render add plant page
+// functionality in public js
 router.get('/addPlant', withAuth, (req, res) => {
       res.render('Plantadd', {
             // loggedIn: req.session.loggedIn
@@ -97,6 +107,7 @@ router.get('/addPlant', withAuth, (req, res) => {
       })
 })
 
+// get all graveyard plants
 router.get('/graves', withAuth, (req, res) => {
       Graveyard.findAll({
             where: {
@@ -115,6 +126,8 @@ router.get('/graves', withAuth, (req, res) => {
                   },
             ],
       })
+
+      // render graveyard dashboard
       .then(dbGraveyardData => {
 
             const graveyard = dbGraveyardData.map(graveyard => graveyard.get({ plain: true }));
@@ -130,23 +143,13 @@ router.get('/graves', withAuth, (req, res) => {
       })
 })
 
-// router.get('/graves', withAuth, (req, res) => {
-//       res.render('graveyard', {
-//             // loggedIn: req.session.loggedIn
-//             loggedIn: true
-//       })
-//   })
-
+// render edit plant page
+// nonfunctional, future goal
+// TODO: rewrite as a get route for plant by id, then put route by id, then render edit page
 router.get('/plantedit', (req, res) => {
       res.render('plantedit',{
             loggedIn: req.session.loggedIn
       })
 })
-
-// router.get('/graveyard', (req, res) => {
-//       res.render('graveyard',{
-//             loggedIn: req.session.loggedIn
-//       })
-// })
 
 module.exports = router;
