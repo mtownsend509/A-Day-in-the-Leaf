@@ -146,7 +146,7 @@ const submitPlant = async (event) => {
     return false;
   }
   var waterMax = document.querySelector('#water').value;
-  if (!waterMax) {
+  if (!waterMax || isNaN(waterMax) == true) {
     alert("Please use a number to fill out water frequency field");
     return false;
   }
