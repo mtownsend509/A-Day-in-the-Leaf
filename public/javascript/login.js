@@ -1,4 +1,4 @@
-console.log('this is connected')
+//lines 2-22 get the values of the form and sees if they are associated with a profile in the database, if yes redirects to the dashboard with logged in status true
 const logIn = async (event) => {
   event.preventDefault();
 
@@ -21,6 +21,7 @@ const logIn = async (event) => {
   } 
 };
 
+//below are navigation button event listeners and redirections
 const home = () => {
     document.location.replace('/');
 };

@@ -1,3 +1,4 @@
+// lines 2-28 take the user input and and if their password entires match it creates a new profile and redirects the user to the dashboard
 const signUp = async(event) => {
   event.preventDefault();
 
@@ -26,6 +27,7 @@ const signUp = async(event) => {
   }
 };
 
+//following code handles event listeners and redirects to other pages on click
 const home = () => {
     document.location.replace('/');
 };

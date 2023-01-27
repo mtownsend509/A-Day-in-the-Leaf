@@ -107,7 +107,7 @@ router.get('/addPlant', withAuth, (req, res) => {
       })
 })
 
-// get all graveyard plants
+// get all graveyard plants where the profile id matches
 router.get('/graves', withAuth, (req, res) => {
       Graveyard.findAll({
             where: {
