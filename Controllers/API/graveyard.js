@@ -7,7 +7,7 @@ const { Profile, Plant, Graveyard } = require('../../Models');
 // auth helper
 const withAuth = require('../../Utils/Auth');
 
-// create route from plant delete
+// Creates a row in graveyard table
 router.post('/', (req, res) => {
   Graveyard.create({
         name: req.body.name,
@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
   });
 })
 
-// get route for all graveyard plants, populated right before plant delete route
+// gives all gravyard data
 router.get('/', async (req, res) => {
   // res.json({message : 'plants are here'});
   Graveyard.findAll({

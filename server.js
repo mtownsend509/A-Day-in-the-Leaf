@@ -19,6 +19,7 @@ var CronJob = require('cron').CronJob;
 const { Plant } = require('./Models/index');
 // database connection
 const sequelize = require('./config/Connection');
+//sequelize model querying
 const Op = require('sequelize').Op;
 const { put } = require('./Controllers');
 // store session cookies
@@ -73,9 +74,9 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 
-// cronjob test
-var test = new CronJob(
-	'* * * * *',
+//adds one to every plant's column for days since last watering, at midnight every day
+var cron = new CronJob(
+	'0 0 0 * * *',
 	async function() {
    const plantUpdate = await Plant.update(
     {
@@ -94,4 +95,4 @@ var test = new CronJob(
 	'America/Los_Angeles'
 );
 
-test;
+cron;
