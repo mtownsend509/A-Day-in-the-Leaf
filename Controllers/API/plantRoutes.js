@@ -40,7 +40,7 @@ router.get('/', async (req, res) => {
   });
 })
 
-// get plant route by id
+// get single plant route by id
 router.get('/:id', async (req, res) => {
   Plant.findOne({
     where: {
