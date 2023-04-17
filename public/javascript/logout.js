@@ -228,9 +228,6 @@ document.querySelector('#plant-add').addEventListener('click', plantAdd);
 if (document.querySelector('#plant-submit')) {
   document.querySelector('#plant-submit').addEventListener('click', submitPlant);
 }
-// if (document.querySelector('#water-button')) {
-//   document.querySelector('#water-button').addEventListener('click', plantWater)
-// }
 if (document.querySelector('#edit-button')) {
   document.querySelector('#edit-button').addEventListener('click', editPage)
 }

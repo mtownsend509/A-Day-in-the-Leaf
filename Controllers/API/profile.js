@@ -56,6 +56,7 @@ router.post("/", async (req, res) => {
     req.session.save(() => {
       req.session.profile_id = profileData.id;
       req.session.logged_in = true;
+      res.cookie('username', req.body.username);
       res.status(200).json(profileData);
     });
   } catch (err) {
